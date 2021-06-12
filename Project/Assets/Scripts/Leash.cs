@@ -6,6 +6,9 @@ public class Leash : MonoBehaviour
 {
     public Rigidbody2D parent;
     public Rigidbody2D target;
+
+    public Transform parentPosition;
+    public Transform targetPosition;
     private LineRenderer lineRenderer;
     public float leashLength = 5;
     public float segmentLength = 0.1f;
@@ -46,9 +49,11 @@ public class Leash : MonoBehaviour
         Vector3[] positions = new Vector3[leashElements.Count + 2];
         for(int i=0; i<leashElements.Count; i++)
         {
-            positions[i + 1] = leashElements[i].transform.position;
+            Vector3 newPosition = leashElements[i].transform.position;
+            newPosition.z = Vector3.Lerp(targetPosition.position, parentPosition.position, (float)i / leashElements.Count).z;
+            positions[i + 1] = newPosition;
         }
-        positions[0] = target.position;
+        positions[0] = targetPosition.position;
         positions[leashElements.Count] = target.position;
         //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
