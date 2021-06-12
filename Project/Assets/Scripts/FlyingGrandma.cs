@@ -11,6 +11,7 @@ public class FlyingGrandma : MonoBehaviour
     public float groundedDrag = 20;
     public float groundedMass = 4;
     private bool flying = false;
+    public float pullDistance = 4;
     private new Rigidbody2D rigidbody;
     public float currentVelocity;
     public float flyingLaunchSpeed = 2;
@@ -18,6 +19,7 @@ public class FlyingGrandma : MonoBehaviour
     private float landingThresholdTime = 0;
     private Quaternion initialRot;
     public float takeoffForce = 900;
+    public Transform dog;
     
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -35,7 +37,12 @@ public class FlyingGrandma : MonoBehaviour
     {
         currentVelocity = rigidbody.velocity.magnitude;
         bool isLeft = rigidbody.velocity.x < 0.01f;
+        if(rigidbody.velocity.sqrMagnitude < 0.5f)
+        {
+            isLeft = (rigidbody.transform.position.x > dog.transform.position.x);
+        }
         animator.SetBool("left", isLeft);
+        animator.SetBool("pull", Vector3.Distance(transform.position, dog.position) > pullDistance);
         
         if(!flying)
         {

@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2138688832}
   animator: {fileID: 2138688831}
-  acceleration: 400
+  acceleration: 250
 --- !u!114 &5720798911809835051
 MonoBehaviour:
   m_ObjectHideFlags: 0

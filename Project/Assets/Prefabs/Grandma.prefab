@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d7a3f2b1e536af34cb549e048e0a1727, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20227023a809c4e40bac6972b9e17620, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -235,9 +235,11 @@ MonoBehaviour:
   flyingMass: 3
   groundedDrag: 5
   groundedMass: 10
+  pullDistance: 4
   currentVelocity: 0
   flyingLaunchSpeed: 10
   landingThresholdDuration: 0.5
-  takeoffForce: 700
+  takeoffForce: 260
+  dog: {fileID: 0}
   spriteRenderer: {fileID: 6610039352478170239}
   animator: {fileID: 6610039352478170236}

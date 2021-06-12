@@ -1409,6 +1409,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1655080041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5720798911809835062, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+  m_PrefabInstance: {fileID: 5720798911441580985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1721633937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1721633937, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
@@ -1891,6 +1896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma
       objectReference: {fileID: 0}
+    - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
+      propertyPath: dog
+      value: 
+      objectReference: {fileID: 1655080041}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
 --- !u!1001 &7708048673407224115
