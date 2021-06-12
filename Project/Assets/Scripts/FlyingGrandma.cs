@@ -13,6 +13,7 @@ public class FlyingGrandma : MonoBehaviour
     private bool flying = false;
     private new Rigidbody2D rigidbody;
     public float currentVelocity;
+    public float flyingLaunchSpeed = 2;
     
     void Start()
     {
@@ -31,6 +32,7 @@ public class FlyingGrandma : MonoBehaviour
                 flying = true;
                 rigidbody.drag = flyingDrag;
                 rigidbody.mass = flyingMass;
+                rigidbody.velocity = rigidbody.velocity.normalized * flyingLaunchSpeed;
             }
         }
         else
