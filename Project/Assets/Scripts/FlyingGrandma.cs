@@ -37,6 +37,7 @@ public class FlyingGrandma : MonoBehaviour
         {
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
+                rigidbody.velocity = Vector3.zero;
                 flying = false;
                 rigidbody.drag = groundedDrag;
                 rigidbody.mass = groundedMass;
