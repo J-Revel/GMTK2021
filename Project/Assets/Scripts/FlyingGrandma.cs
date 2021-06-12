@@ -31,7 +31,8 @@ public class FlyingGrandma : MonoBehaviour
     void Update()
     {
         currentVelocity = rigidbody.velocity.magnitude;
-        animator.SetBool("left", rigidbody.velocity.x < 0.01f);
+        bool isLeft = rigidbody.velocity.x < 0.01f;
+        animator.SetBool("left", isLeft);
         
         if(!flying)
         {
@@ -48,15 +49,11 @@ public class FlyingGrandma : MonoBehaviour
         else
         {
             float angle = 0;
-            if(rigidbody.velocity.x > 0)
-            {
-                angle = Vector3.SignedAngle(Vector2.right, rigidbody.velocity, Vector3.forward);
-            }
-            else
-            {
-                angle = Vector3.SignedAngle(Vector2.left, rigidbody.velocity, Vector3.forward);
-            }
-            spriteRenderer.transform.rotation = initialRot * Quaternion.AngleAxis(angle, Vector3.forward);
+            angle = Vector3.SignedAngle(Vector2.right, rigidbody.velocity, Vector3.forward);
+
+            float angleRatio = Mathf.Abs(rigidbody.velocity.normalized.x);
+            Debug.Log(angleRatio);
+            spriteRenderer.transform.rotation = Quaternion.Slerp(Quaternion.identity, initialRot, angleRatio) * Quaternion.AngleAxis(angle + (isLeft ? 180 : 0), Vector3.forward);
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
                 landingThresholdTime += Time.deltaTime;
