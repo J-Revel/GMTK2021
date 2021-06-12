@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1218631132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218631133}
+  m_Layer: 10
+  m_Name: Leash Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218631133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218631132}
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: -0.023, z: -0.27}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_Children: []
+  m_Father: {fileID: 5720798911809835062}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!1 &2138688829
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64656db98fdfc9b4bbde42735cb4cf93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,6 +178,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.5}
   m_Children:
   - {fileID: 2138688830}
+  - {fileID: 1218631133}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -201,10 +232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 5720798911809835060}
   target: {fileID: 0}
-  parentPosition: {fileID: 2138688830}
+  parentPosition: {fileID: 1218631133}
   targetPosition: {fileID: 0}
   leashLength: 4
-  segmentLength: 0.2
+  segmentLength: 0.1
   leashForce: 0
   leashElements: []
   leashElementPrefab: {fileID: 8038916373481924937, guid: 17af27777acd68f4295d7dd5c6f9d653, type: 3}

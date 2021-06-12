@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1721633937}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Hand Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721633936}
   m_LocalRotation: {x: -0.38268313, y: -0, z: -0, w: 0.92387974}
-  m_LocalPosition: {x: 0, y: 0.61, z: -0.2}
+  m_LocalPosition: {x: 0, y: -0.026, z: -0.271}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6610039353395585664}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6610039352478170239}
   - component: {fileID: 6610039352478170236}
   - component: {fileID: 1502028988}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6610039352478170233}
   m_LocalRotation: {x: -0.38268313, y: -0, z: -0, w: 0.92387974}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalPosition: {x: 0, y: 0, z: -0.245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6610039353395585664}

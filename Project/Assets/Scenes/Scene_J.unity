@@ -1740,7 +1740,7 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 2
   m_Size: {x: 10, y: 10}
-  m_AdaptiveModeThreshold: 0.415
+  m_AdaptiveModeThreshold: 1
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
@@ -1782,10 +1782,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1613265472}
-    - target: {fileID: 5720798911809835051, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
-      propertyPath: segmentLength
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 5720798911809835051, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
       propertyPath: targetPosition
       value: 
@@ -1847,14 +1843,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1721633936, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6610039352478170233, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 6610039353395585664, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: m_RootOrder
       value: 4

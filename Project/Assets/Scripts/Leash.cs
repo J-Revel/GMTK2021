@@ -42,7 +42,7 @@ public class Leash : MonoBehaviour
         parentJoint.connectedBody = previousJoint.GetComponent<Rigidbody2D>();
         parentJoint.distance = segmentLength;
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = leashElements.Count;
+        lineRenderer.positionCount = leashElements.Count + 1;
     }
 
     void Update()
@@ -55,10 +55,11 @@ public class Leash : MonoBehaviour
             positions[i + 1] = newPosition;
         }
         positions[0] = targetPosition.position;
-        positions[leashElements.Count] = target.position;
+        positions[leashElements.Count] = parentPosition.position;
         //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
     }
+
     public void FixedUpdate()
     {
         leashForce = leashElements[0].reactionForce.sqrMagnitude;
