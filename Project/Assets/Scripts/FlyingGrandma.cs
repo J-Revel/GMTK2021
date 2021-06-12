@@ -17,6 +17,8 @@ public class FlyingGrandma : MonoBehaviour
     public float landingThresholdDuration = 0.5f;
     private float landingThresholdTime = 0;
     
+    public SpriteRenderer spriteRenderer;
+    public Animator animator;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -27,11 +29,14 @@ public class FlyingGrandma : MonoBehaviour
     void Update()
     {
         currentVelocity = rigidbody.velocity.magnitude;
+        spriteRenderer.flipX = rigidbody.velocity.x > 0;
+        
         if(!flying)
         {
             if(rigidbody.velocity.sqrMagnitude > velocityFlyingThreshold * velocityFlyingThreshold)
             {
                 flying = true;
+                animator.SetBool("flying", true);
                 rigidbody.drag = flyingDrag;
                 rigidbody.mass = flyingMass;
                 rigidbody.velocity = rigidbody.velocity.normalized * flyingLaunchSpeed;
@@ -44,6 +49,7 @@ public class FlyingGrandma : MonoBehaviour
                 landingThresholdTime += Time.deltaTime;
                 if(landingThresholdTime > landingThresholdDuration)
                 {
+                    animator.SetBool("flying", false);
                     rigidbody.velocity = Vector3.zero;
                     flying = false;
                     rigidbody.drag = groundedDrag;

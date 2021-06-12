@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
+    public SpriteRenderer spriteRenderer;
     public float acceleration;
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,9 @@ public class Character : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.AddForce((new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))).normalized * acceleration, ForceMode2D.Force);
+        if(Input.GetAxis("Horizontal") > 0)
+            spriteRenderer.flipX = true;
+        if(Input.GetAxis("Horizontal") < 0)
+            spriteRenderer.flipX = false;
     }
 }
