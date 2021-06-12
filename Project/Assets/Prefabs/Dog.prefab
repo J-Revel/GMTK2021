@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2138688831}
   - component: {fileID: 6352054678533670611}
   m_Layer: 10
-  m_Name: Square
+  m_Name: Dog Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
