@@ -31,7 +31,7 @@ public class FlyingGrandma : MonoBehaviour
     void Update()
     {
         currentVelocity = rigidbody.velocity.magnitude;
-        spriteRenderer.flipX = rigidbody.velocity.x > 0;
+        spriteRenderer.flipX = rigidbody.velocity.x > 0.01f;
         
         if(!flying)
         {
