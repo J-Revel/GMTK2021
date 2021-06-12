@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0040952726, g: 0.00022412077, b: 0.0000000575232, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040952764, g: 0.0002241208, b: 0.0000000575232, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1910,6 +1910,10 @@ PrefabInstance:
     - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: groundedMass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
+      propertyPath: takeoffForce
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: velocityFlyingThreshold
