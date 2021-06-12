@@ -229,15 +229,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48765604f08884243a97640363d0ef75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityFlyingThreshold: 0.4
+  velocityFlyingThreshold: 3
   velocityLandingThreshold: 3
   flyingDrag: 4
   flyingMass: 3
-  groundedDrag: 30
-  groundedMass: 30
+  groundedDrag: 5
+  groundedMass: 10
   currentVelocity: 0
   flyingLaunchSpeed: 10
   landingThresholdDuration: 0.5
-  takeoffForce: 850
+  takeoffForce: 700
   spriteRenderer: {fileID: 6610039352478170239}
   animator: {fileID: 6610039352478170236}

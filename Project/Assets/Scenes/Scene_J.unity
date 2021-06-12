@@ -1903,18 +1903,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma
       objectReference: {fileID: 0}
-    - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
-      propertyPath: groundedDrag
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
-      propertyPath: groundedMass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6610039353395585789, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
-      propertyPath: velocityFlyingThreshold
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
 --- !u!1001 &7708048673407224115
