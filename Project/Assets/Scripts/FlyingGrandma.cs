@@ -17,6 +17,7 @@ public class FlyingGrandma : MonoBehaviour
     public float landingThresholdDuration = 0.5f;
     private float landingThresholdTime = 0;
     private Quaternion initialRot;
+    public float takeoffForce = 900;
     
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -26,6 +27,8 @@ public class FlyingGrandma : MonoBehaviour
         rigidbody.drag = groundedDrag;
         rigidbody.mass = groundedMass;
         initialRot = spriteRenderer.transform.localRotation;
+        TargetJoint2D joint = rigidbody.gameObject.AddComponent<TargetJoint2D>();
+        joint.breakForce = takeoffForce;
     }
 
     void Update()
@@ -37,14 +40,7 @@ public class FlyingGrandma : MonoBehaviour
         if(!flying)
         {
             spriteRenderer.transform.rotation = initialRot;
-            if(rigidbody.velocity.sqrMagnitude > velocityFlyingThreshold * velocityFlyingThreshold)
-            {
-                flying = true;
-                animator.SetBool("flying", true);
-                rigidbody.drag = flyingDrag;
-                rigidbody.mass = flyingMass;
-                rigidbody.velocity = rigidbody.velocity.normalized * flyingLaunchSpeed;
-            }
+            
         }
         else
         {
@@ -64,6 +60,8 @@ public class FlyingGrandma : MonoBehaviour
                     flying = false;
                     rigidbody.drag = groundedDrag;
                     rigidbody.mass = groundedMass;
+                    TargetJoint2D joint = rigidbody.gameObject.AddComponent<TargetJoint2D>();
+                    joint.breakForce = takeoffForce;
                 }
             }
             else
@@ -71,5 +69,15 @@ public class FlyingGrandma : MonoBehaviour
                 landingThresholdTime = 0;
             }
         }
+    }
+
+    void OnJointBreak2D(Joint2D joint)
+    {
+        
+        flying = true;
+        animator.SetBool("flying", true);
+        rigidbody.drag = flyingDrag;
+        rigidbody.mass = flyingMass;
+        rigidbody.velocity = rigidbody.velocity.normalized * flyingLaunchSpeed;
     }
 }

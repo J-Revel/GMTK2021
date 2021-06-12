@@ -12,6 +12,7 @@ public class Leash : MonoBehaviour
     private LineRenderer lineRenderer;
     public float leashLength = 5;
     public float segmentLength = 0.1f;
+    public float leashForce;
 
     public List<DistanceJoint2D> leashElements = new List<DistanceJoint2D>();
 
@@ -57,5 +58,9 @@ public class Leash : MonoBehaviour
         positions[leashElements.Count] = target.position;
         //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
+    }
+    public void FixedUpdate()
+    {
+        leashForce = leashElements[0].reactionForce.sqrMagnitude;
     }
 }
