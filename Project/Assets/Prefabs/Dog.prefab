@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 5720798911809835060}
   target: {fileID: 0}
-  leashLength: 6
+  leashLength: 4
   segmentLength: 0.2
   leashElements: []
   leashElementPrefab: {fileID: 8038916373481924937, guid: 17af27777acd68f4295d7dd5c6f9d653, type: 3}
