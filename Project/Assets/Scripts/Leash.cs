@@ -5,7 +5,7 @@ using UnityEngine;
 public class Leash : MonoBehaviour
 {
     public Rigidbody parent;
-    public Rididbody target;
+    public Rigidbody target;
     public float leashLength = 5;
     public float segmentLength = 0.1f;
 
