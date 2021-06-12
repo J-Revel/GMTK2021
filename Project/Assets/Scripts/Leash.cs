@@ -6,6 +6,7 @@ public class Leash : MonoBehaviour
 {
     public Rigidbody2D parent;
     public Rigidbody2D target;
+    private LineRenderer lineRenderer;
     public float leashLength = 5;
     public float segmentLength = 0.1f;
 
@@ -21,9 +22,9 @@ public class Leash : MonoBehaviour
         for(int i=0; i<segmentCount; i++)
         {
             DistanceJoint2D currentJoint = Instantiate(leashElementPrefab, Vector3.Lerp(target.position, parent.position, (float)i / segmentCount), Quaternion.identity);
+            leashElements.Add(currentJoint);
             if(previousJoint == null)
             {
-                Debug.Log(previousJoint);
                 currentJoint.connectedBody = target; 
             }
             else
@@ -36,10 +37,20 @@ public class Leash : MonoBehaviour
         DistanceJoint2D parentJoint = parent.gameObject.AddComponent<DistanceJoint2D>();
         parentJoint.connectedBody = previousJoint.GetComponent<Rigidbody2D>();
         parentJoint.distance = segmentLength;
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = leashElements.Count;
     }
 
     void Update()
     {
-        
+        Vector3[] positions = new Vector3[leashElements.Count + 2];
+        for(int i=0; i<leashElements.Count; i++)
+        {
+            positions[i + 1] = leashElements[i].transform.position;
+        }
+        positions[0] = target.position;
+        positions[leashElements.Count] = target.position;
+        //positions[0] = parent.position;
+        lineRenderer.SetPositions(positions);
     }
 }
