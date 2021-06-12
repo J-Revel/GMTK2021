@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &6610039352478170236
 Animator:
   serializedVersion: 3
@@ -246,5 +246,5 @@ MonoBehaviour:
   currentVelocity: 0
   flyingLaunchSpeed: 2.5
   landingThresholdDuration: 0.5
-  spriteRenderer: {fileID: 0}
-  animator: {fileID: 0}
+  spriteRenderer: {fileID: 6610039352478170239}
+  animator: {fileID: 6610039352478170236}
