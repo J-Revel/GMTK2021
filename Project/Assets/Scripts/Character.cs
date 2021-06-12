@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
     public SpriteRenderer spriteRenderer;
+    public Animator animator;
     public float acceleration;
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,8 @@ public class Character : MonoBehaviour
     {
         rigidbody.AddForce((new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))).normalized * acceleration, ForceMode2D.Force);
         if(Input.GetAxis("Horizontal") > 0)
-            spriteRenderer.flipX = true;
+            animator.SetBool("left", false);
         if(Input.GetAxis("Horizontal") < 0)
-            spriteRenderer.flipX = false;
+            animator.SetBool("left", true);
     }
 }

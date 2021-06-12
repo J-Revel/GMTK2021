@@ -1909,6 +1909,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5228576d3b33e4882413e4ff0d6fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2138688831 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2138688831, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+  m_PrefabInstance: {fileID: 5720798911441580985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2138688833 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2138688830, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+  m_PrefabInstance: {fileID: 5720798911441580985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5720798911441580985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1918,7 +1928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2138688830, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.202
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2138688830, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1944,6 +1954,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5720798911809835049, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2138688831}
     - target: {fileID: 5720798911809835050, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.02516365
@@ -1952,6 +1966,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1613265472}
+    - target: {fileID: 5720798911809835051, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+      propertyPath: parentPosition
+      value: 
+      objectReference: {fileID: 1721633937}
+    - target: {fileID: 5720798911809835051, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+      propertyPath: targetPosition
+      value: 
+      objectReference: {fileID: 2138688833}
     - target: {fileID: 5720798911809835061, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
       propertyPath: m_Name
       value: Dog
@@ -2020,11 +2042,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6610039352478170238, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6610039352478170238, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.2
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6610039352478170238, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2050,6 +2072,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6610039352478170239, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d7a3f2b1e536af34cb549e048e0a1727, type: 3}
     - target: {fileID: 6610039352478170239, guid: 5c71db15ecb4e2b418bf0713e5f9a93d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

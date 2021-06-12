@@ -124,7 +124,7 @@ DistanceJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 0.3
-  m_MaxDistanceOnly: 0
+  m_MaxDistanceOnly: 1
 --- !u!58 &8038916373481924941
 CircleCollider2D:
   m_ObjectHideFlags: 0
