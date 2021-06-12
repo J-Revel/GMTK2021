@@ -16,6 +16,7 @@ public class FlyingGrandma : MonoBehaviour
     public float flyingLaunchSpeed = 2;
     public float landingThresholdDuration = 0.5f;
     private float landingThresholdTime = 0;
+    private Quaternion initialRot;
     
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -24,6 +25,7 @@ public class FlyingGrandma : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.drag = groundedDrag;
         rigidbody.mass = groundedMass;
+        initialRot = spriteRenderer.transform.localRotation;
     }
 
     void Update()
@@ -33,6 +35,7 @@ public class FlyingGrandma : MonoBehaviour
         
         if(!flying)
         {
+            spriteRenderer.transform.rotation = initialRot;
             if(rigidbody.velocity.sqrMagnitude > velocityFlyingThreshold * velocityFlyingThreshold)
             {
                 flying = true;
@@ -44,6 +47,16 @@ public class FlyingGrandma : MonoBehaviour
         }
         else
         {
+            float angle = 0;
+            if(rigidbody.velocity.x > 0)
+            {
+                angle = Vector3.SignedAngle(Vector2.right, rigidbody.velocity, Vector3.forward);
+            }
+            else
+            {
+                angle = Vector3.SignedAngle(Vector2.left, rigidbody.velocity, Vector3.forward);
+            }
+            spriteRenderer.transform.rotation = initialRot * Quaternion.AngleAxis(angle, Vector3.forward);
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
                 landingThresholdTime += Time.deltaTime;
