@@ -80,11 +80,10 @@ public class FlyingGrandma : MonoBehaviour
 
     void OnJointBreak2D(Joint2D joint)
     {
-        
         flying = true;
         animator.SetBool("flying", true);
         rigidbody.drag = flyingDrag;
         rigidbody.mass = flyingMass;
-        rigidbody.velocity = rigidbody.velocity.normalized * flyingLaunchSpeed;
+        rigidbody.velocity = (dog.position - transform.position).normalized * flyingLaunchSpeed;
     }
 }
