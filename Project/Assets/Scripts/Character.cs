@@ -15,6 +15,6 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rigidbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * acceleration, ForceMode2D.Force);
+        rigidbody.AddForce((new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))).normalized * acceleration, ForceMode2D.Force);
     }
 }
