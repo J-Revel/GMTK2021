@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8038916373481924942}
   - component: {fileID: 8038916373481924937}
   - component: {fileID: 8038916373481924941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leash Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
