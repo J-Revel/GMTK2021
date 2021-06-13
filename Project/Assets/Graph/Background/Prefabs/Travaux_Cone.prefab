@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708171128755852673}
   - component: {fileID: 1760019442323011918}
+  - component: {fileID: 8483100421205838686}
   m_Layer: 0
   m_Name: Travaux_Cone
   m_TagString: Untagged
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8483100421205838686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796494834238217846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5228576d3b33e4882413e4ff0d6fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -60,6 +60,7 @@ public class LinearMovement : MonoBehaviour
                 transform.position = startPosition;
             }
         }
-        animator.SetBool("left", left);
+        if(animator != null)
+            animator.SetBool("left", left);
     }
 }
