@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8218029311478581054}
   - component: {fileID: 5465380965472128974}
+  - component: {fileID: 8955465215047735010}
   m_Layer: 0
   m_Name: Haie_Angle_Bas
   m_TagString: Untagged
@@ -162,6 +163,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8955465215047735010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596601989354128931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5228576d3b33e4882413e4ff0d6fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4997632513524832207
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 4997632513524832207}
   m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: -0.92}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8218029311478581054}
   m_Father: {fileID: 0}
