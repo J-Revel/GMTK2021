@@ -10766,7 +10766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayValue: 1000
-  deltaPerSecond: 50
+  deltaPerSecond: 200
 --- !u!1001 &1324317052
 PrefabInstance:
   m_ObjectHideFlags: 0
