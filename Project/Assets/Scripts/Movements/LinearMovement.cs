@@ -15,11 +15,14 @@ public class LinearMovement : MonoBehaviour
     private Vector3 startPosition;
     private new Rigidbody2D rigidbody;
     public bool uturn = false;
+    private Animator animator;
+    private bool left = false;
 
     void Start()
     {
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
         switch(direction)
         {
             case Direction.Up:
@@ -30,6 +33,7 @@ public class LinearMovement : MonoBehaviour
                 break;
             case Direction.Left:
                 rigidbody.velocity = new Vector3(-speed, 0);
+                left = true;
                 break;
             case Direction.Right:
                 rigidbody.velocity = new Vector3(speed, 0);
@@ -46,11 +50,16 @@ public class LinearMovement : MonoBehaviour
             if(uturn)
             {
                 rigidbody.velocity = - rigidbody.velocity;
+                if(direction == Direction.Right || direction == Direction.Left)
+                {
+                    left = !left;
+                }
             }
             else
             {
                 transform.position = startPosition;
             }
         }
+        animator.SetBool("left", left);
     }
 }
