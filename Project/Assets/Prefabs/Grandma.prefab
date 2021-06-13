@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 6610039353395585666}
   - component: {fileID: 6610039353395585665}
   - component: {fileID: 6610039353395585789}
+  - component: {fileID: 2922980839270463609}
   m_Layer: 9
   m_Name: Grandma
   m_TagString: Untagged
@@ -229,8 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48765604f08884243a97640363d0ef75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityFlyingThreshold: 3
-  velocityLandingThreshold: 3
+  velocityFlyingThreshold: 4
+  velocityLandingThreshold: 3.5
   flyingDrag: 4
   flyingMass: 3
   groundedDrag: 5
@@ -238,8 +239,20 @@ MonoBehaviour:
   pullDistance: 4
   currentVelocity: 0
   flyingLaunchSpeed: 10
-  landingThresholdDuration: 0.5
+  landingThresholdDuration: 0.4
   takeoffForce: 260
   dog: {fileID: 0}
   spriteRenderer: {fileID: 6610039352478170239}
   animator: {fileID: 6610039352478170236}
+--- !u!114 &2922980839270463609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610039353395585788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ca16bc5ed1f3c4b954ffe5c9a6611a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

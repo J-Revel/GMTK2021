@@ -13,6 +13,8 @@ public class Leash : MonoBehaviour
     public float leashLength = 5;
     public float segmentLength = 0.1f;
     public float leashForce;
+    public float zOffset = 1;
+    public float pow = 1;
 
     public List<DistanceJoint2D> leashElements = new List<DistanceJoint2D>();
 
@@ -42,20 +44,30 @@ public class Leash : MonoBehaviour
         parentJoint.connectedBody = previousJoint.GetComponent<Rigidbody2D>();
         parentJoint.distance = segmentLength;
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = leashElements.Count + 1;
+        lineRenderer.positionCount = leashElements.Count + 2;
     }
 
     void Update()
     {
         Vector3[] positions = new Vector3[leashElements.Count + 2];
+        positions[0] = targetPosition.position;
+        positions[leashElements.Count + 1] = parentPosition.position;
         for(int i=0; i<leashElements.Count; i++)
         {
             Vector3 newPosition = leashElements[i].transform.position;
-            newPosition.z = Vector3.Lerp(targetPosition.position, parentPosition.position, (float)i / leashElements.Count).z;
-            positions[i + 1] = newPosition;
+            //newPosition.z -= zOffset;
+
+            Vector3 targetOffset = targetPosition.position - leashElements[1].transform.position;
+            Vector3 parentOffset = parentPosition.position - leashElements[leashElements.Count - 2].transform.position;
+            
+            float ratio = (float)i / leashElements.Count;
+
+            // Vector3 targetPosition = Vector3.Lerp(positions[0], positions[leashElements.Count + 1], ratio);
+            // targetPosition.x = newPosition.x;
+            // targetPosition.y = newPosition.y;
+            
+            positions[i + 1] = newPosition + targetOffset * Mathf.Pow(1 - ratio, pow) + parentOffset * ratio;
         }
-        positions[0] = targetPosition.position;
-        positions[leashElements.Count] = parentPosition.position;
         //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
     }

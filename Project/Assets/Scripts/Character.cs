@@ -25,5 +25,6 @@ public class Character : MonoBehaviour
         if(Input.GetAxis("Horizontal") < 0)
             animator.SetBool("left", true);
         animator.SetBool("run", inputVector.sqrMagnitude > 0.5);
+        animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
     }
 }
