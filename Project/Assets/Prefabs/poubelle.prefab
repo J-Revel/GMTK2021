@@ -221,6 +221,7 @@ MonoBehaviour:
   toShow: {fileID: 7199047792687484291}
   fx:
   - {fileID: 3571299067277073093, guid: 166a5d9c27598eb4d93216418008edac, type: 3}
+  - {fileID: 8072669675500175205, guid: 59efce548742a5548a837184fde315e1, type: 3}
   fxSpawnPoint: {fileID: 2034451839}
 --- !u!1 &6050945137013001511
 GameObject:

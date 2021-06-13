@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3571299067277073093}
   - component: {fileID: 6534117307042269608}
   - component: {fileID: 9097740145393222504}
-  - component: {fileID: 1002023677375474623}
   m_Layer: 0
   m_Name: Poof
   m_TagString: Untagged
@@ -148,19 +147,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5692d4575cfbd1c42ae5767857e7cd27, type: 3}
   - {fileID: 8300000, guid: 2fd26cc27b4974b4aad10bf7a9030006, type: 3}
   - {fileID: 8300000, guid: b0cca05835ab2b2429c7848e28ba333c, type: 3}
---- !u!114 &1002023677375474623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3571299067277073095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20403841d246dca4687c0077d128cccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: -100
 --- !u!1 &5802168565656095534
 GameObject:
   m_ObjectHideFlags: 0
