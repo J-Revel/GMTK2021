@@ -66,7 +66,7 @@ public class Leash : MonoBehaviour
             // targetPosition.x = newPosition.x;
             // targetPosition.y = newPosition.y;
             
-            positions[i + 1] = newPosition + targetOffset * Mathf.Pow(1 - ratio, pow) + parentOffset * ratio;
+            positions[i + 1] = newPosition + targetOffset * (1 - Mathf.Pow(ratio, pow)) + parentOffset * Mathf.Pow(ratio, pow);
         }
         //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
