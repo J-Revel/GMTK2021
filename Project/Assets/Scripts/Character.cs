@@ -29,10 +29,13 @@ public class Character : MonoBehaviour
             animator.SetBool("left", true);
         animator.SetBool("run", inputVector.sqrMagnitude > 0.5);
         animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
-        if(inputVector.sqrMagnitude > 0.5)
+        if(footstepSource != null)
         {
-            footstepSource.volume = Mathf.Min((inputVector.magnitude - 0.7f) * 3, 1);
+            if(inputVector.sqrMagnitude > 0.5)
+            {
+                footstepSource.volume = Mathf.Min((inputVector.magnitude - 0.7f) * 3, 1);
+            }
+            else footstepSource.volume = 0;
         }
-        else footstepSource.volume = 0;
     }
 }
