@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     public float footstepSoundFadeTime = 0;
     public float footstepSoundFadeDuration = 0.5f;
     public AudioSource footstepSource;
+    public bool inputEnabled = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class Character : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if(!inputEnabled)
+            inputVector = Vector3.zero;
         rigidbody.AddForce(inputVector.normalized * acceleration, ForceMode2D.Force);
         if(Input.GetAxis("Horizontal") > 0)
             animator.SetBool("left", false);
@@ -37,5 +40,20 @@ public class Character : MonoBehaviour
             }
             else footstepSource.volume = 0;
         }
+    }
+
+    public void SetCanPee(bool canPee)
+    {
+        animator.SetBool("canPee", canPee);
+    }
+
+    public void StopInput()
+    {
+        inputEnabled = false;
+    }
+
+    public void EnableInput()
+    {
+        inputEnabled = true;
     }
 }
