@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     public float acceleration;
     public float footstepSoundFadeTime = 0;
     public float footstepSoundFadeDuration = 0.5f;
+    public Vector2 forcedInput;
     public AudioSource footstepSource;
     public bool inputEnabled = true;
     // Start is called before the first frame update
