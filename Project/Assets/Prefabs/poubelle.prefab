@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2034451838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034451839}
+  m_Layer: 6
+  m_Name: FX Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2034451839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034451838}
+  m_LocalRotation: {x: -0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: -0.07000351, z: -0.28799644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6050945137013001515}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526032218326372074
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toHide: {fileID: 1526032218326372074}
   toShow: {fileID: 7199047792687484291}
-  fx: []
+  fx:
+  - {fileID: 3571299067277073093, guid: 166a5d9c27598eb4d93216418008edac, type: 3}
+  fxSpawnPoint: {fileID: 2034451839}
 --- !u!1 &6050945137013001511
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +252,7 @@ Transform:
   - {fileID: 1526032218326372070}
   - {fileID: 6050945135212443793}
   - {fileID: 7124622015805609144}
+  - {fileID: 2034451839}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
