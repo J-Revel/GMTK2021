@@ -9,6 +9,9 @@ public class Character : MonoBehaviour
     public Animator animator;
     public float runSpeed = 1;
     public float acceleration;
+    public float footstepSoundFadeTime = 0;
+    public float footstepSoundFadeDuration = 0.5f;
+    public AudioSource footstepSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +29,10 @@ public class Character : MonoBehaviour
             animator.SetBool("left", true);
         animator.SetBool("run", inputVector.sqrMagnitude > 0.5);
         animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
+        if(inputVector.sqrMagnitude > 0.5)
+        {
+            footstepSource.volume = Mathf.Min((inputVector.magnitude - 0.7f) * 3, 1);
+        }
+        else footstepSource.volume = 0;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScoreService : MonoBehaviour
 {
     public static ScoreService instance;
-    public float currentScore = 0;
+    public int currentScore = 0;
     public int damageCount = 0;
 
     private void Awake()
