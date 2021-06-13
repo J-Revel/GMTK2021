@@ -16,7 +16,7 @@ TagManager:
   - Leash
   - Grandma
   - Dog
-  - Post Processing
+  - invisible wall
   - 
   - 
   - 
@@ -38,9 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2565688573
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
