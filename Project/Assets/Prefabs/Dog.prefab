@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 2138688832}
   - component: {fileID: 2138688831}
   - component: {fileID: 6352054678533670611}
+  - component: {fileID: 5143406144698871622}
   m_Layer: 10
   m_Name: Dog Sprite
   m_TagString: Untagged
@@ -146,6 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5228576d3b33e4882413e4ff0d6fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5143406144698871622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138688829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08044b3b0f1513d48952a0cb28b77c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5720798911809835049}
 --- !u!1 &5720798911809835061
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +233,10 @@ MonoBehaviour:
   animator: {fileID: 2138688831}
   runSpeed: 1
   acceleration: 250
+  footstepSoundFadeTime: 0
+  footstepSoundFadeDuration: 0.5
+  footstepSource: {fileID: 0}
+  inputEnabled: 1
 --- !u!114 &5720798911809835051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +256,8 @@ MonoBehaviour:
   leashLength: 4
   segmentLength: 0.1
   leashForce: 0
+  zOffset: 1
+  pow: 1
   leashElements: []
   leashElementPrefab: {fileID: 8038916373481924937, guid: 17af27777acd68f4295d7dd5c6f9d653, type: 3}
 --- !u!120 &5720798911809835050
