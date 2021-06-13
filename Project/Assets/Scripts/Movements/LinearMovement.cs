@@ -14,6 +14,7 @@ public class LinearMovement : MonoBehaviour
     private float time = 0;
     private Vector3 startPosition;
     private new Rigidbody2D rigidbody;
+    public bool uturn = false;
 
     void Start()
     {
@@ -42,7 +43,14 @@ public class LinearMovement : MonoBehaviour
         if(time > loopDuration)
         {
             time = 0;
-            transform.position = startPosition;
+            if(uturn)
+            {
+                rigidbody.velocity = - rigidbody.velocity;
+            }
+            else
+            {
+                transform.position = startPosition;
+            }
         }
     }
 }
