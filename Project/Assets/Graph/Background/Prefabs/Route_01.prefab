@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290910371688103318}
   - component: {fileID: 1863730313561595800}
+  - component: {fileID: 4593053137039110681}
   m_Layer: 0
   m_Name: Route_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4593053137039110681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269880154090726360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5228576d3b33e4882413e4ff0d6fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
