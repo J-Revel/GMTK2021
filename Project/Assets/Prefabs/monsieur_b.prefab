@@ -215,7 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 2
   speed: 1
-  loopDuration: 10
+  loopDuration: 3
+  uturn: 1
 --- !u!61 &308626850
 BoxCollider2D:
   m_ObjectHideFlags: 0
