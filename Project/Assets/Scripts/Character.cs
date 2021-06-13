@@ -14,6 +14,8 @@ public class Character : MonoBehaviour
     public Vector2 forcedInput;
     public AudioSource footstepSource;
     public bool inputEnabled = true;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -13,6 +13,7 @@ public class ScoreService : MonoBehaviour
     public float gameTime = 0;
     public int currentScore = 0;
     public int[] stats = new int[sizeof(Stat)];
+    public bool timerPaused = false;
 
     private void Awake()
     {
@@ -21,7 +22,8 @@ public class ScoreService : MonoBehaviour
 
     private void Update()
     {
-        gameTime += Time.deltaTime;
+        if(!timerPaused)
+            gameTime += Time.deltaTime;
     }
 
     public void StartGame()
