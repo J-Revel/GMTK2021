@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Characters Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 60cdd9a3be335b747a108db6c49e2796, type: 3}
+    totalSpriteSurfaceArea: 11942582
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f995bc2066a4d9f4e85af6a9f3140ec8, type: 3}
+  - {fileID: 21300000, guid: 65caa630e4b5670478e43728057a0176, type: 3}
+  - {fileID: 21300000, guid: 47bb3b40373fc0c449e04d5f5ceca9b0, type: 3}
+  - {fileID: 21300000, guid: 51aec280f4f09a04890ef9c66d2b0b2c, type: 3}
+  - {fileID: 21300000, guid: ffb985e0b24dcd7479c8e8457f4a3fef, type: 3}
+  - {fileID: 21300000, guid: 6c1f6d7167bbdc846833f7c39a8e2c8f, type: 3}
+  - {fileID: 21300000, guid: d96f81a1f2adbf946871372864e862e6, type: 3}
+  - {fileID: 21300000, guid: d7a3f2b1e536af34cb549e048e0a1727, type: 3}
+  - {fileID: 21300000, guid: 945585e1ccf82564eb5ccb1573861ec3, type: 3}
+  - {fileID: 21300000, guid: 6b2b735233adad44fb0a5a1043a72c8e, type: 3}
+  - {fileID: 21300000, guid: 011f4782c29acd545a10e6d0b279ee02, type: 3}
+  - {fileID: 21300000, guid: 528ee6c251589fe47a1dd5e0ca564a37, type: 3}
+  - {fileID: 21300000, guid: f02e38c2d5a678d4eb065ee4448e84fe, type: 3}
+  - {fileID: 21300000, guid: fda7cac2edceb934f9c6a96cffe497d1, type: 3}
+  - {fileID: 21300000, guid: 20227023a809c4e40bac6972b9e17620, type: 3}
+  - {fileID: 21300000, guid: 9d6d5873affdb6446b8bb6398dfc79ce, type: 3}
+  - {fileID: 21300000, guid: 2b2e72a359f3cf54480aa270bb1215f3, type: 3}
+  - {fileID: 21300000, guid: 02b348b3d4d8aed488d0e1ede18bd3a8, type: 3}
+  - {fileID: 21300000, guid: e25fa144d89184341a6a6307db4fa2d4, type: 3}
+  - {fileID: 21300000, guid: 85da915441ea76e43a4623ebf1911c43, type: 3}
+  - {fileID: 21300000, guid: f1dcd654dc7f4c14eb68b3b1a3133c9b, type: 3}
+  - {fileID: 21300000, guid: a8337ea45b10d4f4086764937ba14977, type: 3}
+  - {fileID: 21300000, guid: e8dd35b4d72106e4894f47cdea0f7971, type: 3}
+  - {fileID: 21300000, guid: 237c8215c37dd1d409a0cde4b10cda3f, type: 3}
+  - {fileID: 21300000, guid: 387e23152c16e37419e18bed1bf9d7b7, type: 3}
+  - {fileID: 21300000, guid: 57bffa75d6540784aa1a3da9070e93ab, type: 3}
+  - {fileID: 21300000, guid: 920a31766fe499743aae4c9828d4eac9, type: 3}
+  - {fileID: 21300000, guid: 56b994b68fb3ea444b7501d12f9dd8fc, type: 3}
+  - {fileID: 21300000, guid: ecdff7777110acb4e848c3774ebbd5d8, type: 3}
+  - {fileID: 21300000, guid: 1b1e7c87901cff24c86d48d8448fd955, type: 3}
+  - {fileID: 21300000, guid: 41f2aae764371be49bc5f3766a45f39e, type: 3}
+  - {fileID: 21300000, guid: 10535f287e0596a499fe24599ddd3713, type: 3}
+  - {fileID: 21300000, guid: 22837088a627e51448b1fab5c1b324de, type: 3}
+  - {fileID: 21300000, guid: 2a4e9a983a377c94a90664f553008dd0, type: 3}
+  - {fileID: 21300000, guid: ac2713d80fbbd0f4983dfa311dc7e1ef, type: 3}
+  - {fileID: 21300000, guid: efd22909f86018a45b01550c45837218, type: 3}
+  - {fileID: 21300000, guid: af4f86396deaba14487ebe340fddda58, type: 3}
+  - {fileID: 21300000, guid: 64656db98fdfc9b4bbde42735cb4cf93, type: 3}
+  - {fileID: 21300000, guid: 959004e9c7791a34cb032453b1b1e3f7, type: 3}
+  - {fileID: 21300000, guid: e09630f98b997964ab153d9b5966f40f, type: 3}
+  - {fileID: 21300000, guid: b3ccd12af62457440bbb927eb3088d73, type: 3}
+  - {fileID: 21300000, guid: 09669daa3a1fce64d822523269d0af5f, type: 3}
+  - {fileID: 21300000, guid: c217d03b7f2953b4083f216a564d7b7c, type: 3}
+  - {fileID: 21300000, guid: 6a06914b334aca347abe2b7913947d12, type: 3}
+  - {fileID: 21300000, guid: 4db3827b5bb814b4199d25228c2defd8, type: 3}
+  - {fileID: 21300000, guid: 8b9e508b4c42efa4480f6efd4aab4fea, type: 3}
+  - {fileID: 21300000, guid: 943c60ab97c186e47a2b69be87bc029b, type: 3}
+  - {fileID: 21300000, guid: b47fd3cb0bd26074e9b9b435b565344c, type: 3}
+  - {fileID: 21300000, guid: 87c1dadb88eb4a84eadb646b27e3a427, type: 3}
+  - {fileID: 21300000, guid: 8b44580c673cd5044885b52fbed4efd5, type: 3}
+  - {fileID: 21300000, guid: 11de616c20c1b2c49b2f5f66b09d0f12, type: 3}
+  - {fileID: 21300000, guid: 4a5ea4fc2336610419e26fc09d60f765, type: 3}
+  - {fileID: 21300000, guid: f98dea0da89470a42bc88a0b4705245d, type: 3}
+  - {fileID: 21300000, guid: 20ba6d0d46cf5c44da2c2832ff7f4faa, type: 3}
+  - {fileID: 21300000, guid: cb51babd2aa26814b99aabd6326fb64b, type: 3}
+  - {fileID: 21300000, guid: 60271eed9fedecd4c97ac4718f526b9e, type: 3}
+  - {fileID: 21300000, guid: 196d8cfd36236634d9855b77eb458374, type: 3}
+  - {fileID: 21300000, guid: a559933e818298245a90616eb20aa96f, type: 3}
+  - {fileID: 21300000, guid: 5644fe4eaa3f79945b803a2b99df9445, type: 3}
+  - {fileID: 21300000, guid: b0ad5bce7890fd74d92fa839190595da, type: 3}
+  - {fileID: 21300000, guid: 693e6d1fc2cc2a24895f16fb5e78a071, type: 3}
+  - {fileID: 21300000, guid: c6820e1fd68e8ab4b8c242fd4da7b2df, type: 3}
+  - {fileID: 21300000, guid: 734e845fd94e11948b0ffcbc2398a0d4, type: 3}
+  - {fileID: 21300000, guid: b15519af1b4e19345bf8cb372961402e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Doggo_pee_f02
+  - MonsieurTrompette_f01
+  - PigeonIdle_f02
+  - Doggo_neutral_02_f02
+  - MonsieurVelo_f02
+  - MamaFall_02_f02
+  - MamaRetain_02_f01
+  - MamaNeutral_02_f01
+  - MamaNeutral_f01
+  - MamaNeutral_f02
+  - Doggo_neutral_f02
+  - Doggo_neutral_f01
+  - Doggo_neutral_02_f01
+  - Monsieur_c_f01
+  - MamaRetain_f02
+  - Monsieur_b_f02
+  - MamaFly_f01
+  - PigeonIdle_02_f02
+  - Madame_b_f02
+  - Monsieur_banc_f02
+  - Doggo_02_f01
+  - Madame_a_f02
+  - Doggo_pee_02_f01
+  - Enfant_a_f01
+  - MonsieurVelo_f01
+  - Monsieur_b_02_f02
+  - MamaFly_f02
+  - PigeonIdle_f01
+  - Monsieur_c_f02
+  - DoggoStop_f01
+  - Doggo_02_f02
+  - Madame_b_f01
+  - Enfant_b_f02
+  - MamaFly_02_f02
+  - Couple_a_f02
+  - MamaRetain_02_f02
+  - Monsieur_a_f01
+  - Doggo_f01
+  - MonsieurTrompette_f02
+  - Doggo_pee_f01
+  - MamaFly_02_f01
+  - MamaFall_f02
+  - MonsieurVelo_02_f01
+  - Madame_a_f01
+  - MamaFall_02_f03
+  - Doggo_f02
+  - MamaNeutral_02_f02
+  - Monsieur_banc_f01
+  - Monsieur_b_f01
+  - Monsieur_b_02_f01
+  - MamaFall_f03
+  - Monsieur_a_f02
+  - DoggoStop_02_f01
+  - MamaRetain_f01
+  - Doggo_pee_02_f02
+  - Enfant_b_f01
+  - MonsieurVelo_02_f02
+  - Worker_f01
+  - MamaFall_f01
+  - Worker_f02
+  - Enfant_a_f02
+  - Couple_a_f01
+  - PigeonIdle_02_f01
+  - MamaFall_02_f01
+  m_RenderDataMap: {}
+  m_Tag: Characters Atlas
+  m_IsVariant: 0

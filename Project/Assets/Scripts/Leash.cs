@@ -28,6 +28,8 @@ public class Leash : MonoBehaviour
         for(int i=0; i<segmentCount; i++)
         {
             DistanceJoint2D currentJoint = Instantiate(leashElementPrefab, Vector3.Lerp(target.position, parent.position, (float)i / segmentCount), Quaternion.identity);
+            
+
             leashElements.Add(currentJoint);
             if(previousJoint == null)
             {
@@ -67,6 +69,7 @@ public class Leash : MonoBehaviour
             // targetPosition.y = newPosition.y;
             
             positions[i + 1] = newPosition + targetOffset * (1 - Mathf.Pow(ratio, pow)) + parentOffset * Mathf.Pow(ratio, pow);
+            //leashElements[i].transform.rotation = Quaternion.AngleAxis(Vector2.SignedAngle(positions[i], positions[i+1]), new Vector3(0, 0, 1));
         }
         //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
