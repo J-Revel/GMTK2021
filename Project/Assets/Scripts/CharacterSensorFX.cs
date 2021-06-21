@@ -10,7 +10,7 @@ public class CharacterSensorFX : MonoBehaviour
         GetComponent<CharacterSensor>().triggeredDelegate += OnDamage;
     }
 
-    private void OnDamage()
+    private void OnDamage(Character character)
     {
         for(int i=0; i<prefabs.Length; i++)
         {

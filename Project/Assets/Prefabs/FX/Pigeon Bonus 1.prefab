@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 7121509000984287440}
   - component: {fileID: 8097516440176200367}
   m_Layer: 0
-  m_Name: Pigeon Bonus
+  m_Name: Pigeon Bonus 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,3 +263,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonus: 50
+  statToIncrement: 3

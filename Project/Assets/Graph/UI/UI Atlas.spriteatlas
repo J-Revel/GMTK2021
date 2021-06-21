@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: d03a650fde6d1d24092a378a12269d1c, type: 3}
+    totalSpriteSurfaceArea: 4941898
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f0bb0d542afe1e0469e7cb66e1280868, type: 3}
+  - {fileID: 21300000, guid: 7970c906824b05949abcd1c97fa89cec, type: 3}
+  - {fileID: 21300000, guid: e6e256b6ea7957044bb5e83fe53a568c, type: 3}
+  - {fileID: 21300000, guid: 68eab19b87697da469a6347305ab3d11, type: 3}
+  - {fileID: 21300000, guid: 88cd7f6c8312c764e8648dce0ce25c0e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Titre_LongLeash
+  - Score_Board
+  - Portrait_doggo_f01
+  - Bouton_Play
+  - Portrait_doggo_f02
+  m_RenderDataMap: {}
+  m_Tag: UI Atlas
+  m_IsVariant: 0

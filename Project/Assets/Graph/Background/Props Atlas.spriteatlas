@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Props Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 779fe442cd9380340b7f1d31348bd584, type: 3}
+    totalSpriteSurfaceArea: 33816226
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: bb10ce80d792a64499386ad1c2dad250, type: 3}
+  - {fileID: 21300000, guid: 0697b7a0c5891a34c86ac3fa94ac1457, type: 3}
+  - {fileID: 21300000, guid: 9bfef5b06cef6764dbfab1c65102c633, type: 3}
+  - {fileID: 21300000, guid: 8089b4d01b23d48419b08975145a7589, type: 3}
+  - {fileID: 21300000, guid: c0730cb188ba1d6408a66703038cfdc2, type: 3}
+  - {fileID: 21300000, guid: 81a633a221b070049ac5cef01ae96ea8, type: 3}
+  - {fileID: 21300000, guid: 7758e3d2cc857aa47b78ab8404ed7d37, type: 3}
+  - {fileID: 21300000, guid: a2151fe200f2d184a907f911bc22b9cd, type: 3}
+  - {fileID: 21300000, guid: eca6e863c57587941af831bf7f94c021, type: 3}
+  - {fileID: 21300000, guid: 38a3bae314a5f904aa5a3c5359cd74a9, type: 3}
+  - {fileID: 21300000, guid: 62273204b3d5d984789d692237fea64a, type: 3}
+  - {fileID: 21300000, guid: 91d73e247d7c3ae4685ec8b0f9b953bb, type: 3}
+  - {fileID: 21300000, guid: ae5d896438b0d7546a9c09cda1a53a86, type: 3}
+  - {fileID: 21300000, guid: 36af8ef4afee7ac4d8089637e40d89cd, type: 3}
+  - {fileID: 21300000, guid: 9ddf956578f08bc4ca58536f55ab2100, type: 3}
+  - {fileID: 21300000, guid: a8f353a5bd7f0c54bb4e2ac5a7a78d16, type: 3}
+  - {fileID: 21300000, guid: e56c3fb538d8c1e40a798d5c787242cc, type: 3}
+  - {fileID: 21300000, guid: bacf7e162482d2c4aad1752b0c924f02, type: 3}
+  - {fileID: 21300000, guid: ccc53fa6f53755144a75db7943732317, type: 3}
+  - {fileID: 21300000, guid: 44b75ef664c4d1d4b9a6a1226f9008a3, type: 3}
+  - {fileID: 21300000, guid: 1de5ec27be9883b4890a3bfb2606f5d0, type: 3}
+  - {fileID: 21300000, guid: 6a0a0cb7a3ff4034dbc7430769547f38, type: 3}
+  - {fileID: 21300000, guid: 607f63f779029124f8a8f43b5da6c6e9, type: 3}
+  - {fileID: 21300000, guid: 4143ba08671cc0340a11af880603b1bd, type: 3}
+  - {fileID: 21300000, guid: edec5d380ad9e9e45b3a410a3afd2653, type: 3}
+  - {fileID: 21300000, guid: 28938f38158fe3b41b3cf917c996a777, type: 3}
+  - {fileID: 21300000, guid: 32fb9998349690047bc769f582a838e1, type: 3}
+  - {fileID: 21300000, guid: 1f412a6981c85314aad952b32a789c29, type: 3}
+  - {fileID: 21300000, guid: 7693777945b6ede449471d5b2e968a89, type: 3}
+  - {fileID: 21300000, guid: 0cae326a3c221aa47bb2b0cd6b87c6e0, type: 3}
+  - {fileID: 21300000, guid: 5602fabaf745d7b47a702a60090b9e17, type: 3}
+  - {fileID: 21300000, guid: 647758da58e09af48a91b09765c29479, type: 3}
+  - {fileID: 21300000, guid: 745b8a2b90be5594e9a1e628dc555ff0, type: 3}
+  - {fileID: 21300000, guid: e1dbb1bb54994e44f9d058c17ff0e24a, type: 3}
+  - {fileID: 21300000, guid: e91a8e1c4d8d6bf46ad430309ae25da3, type: 3}
+  - {fileID: 21300000, guid: bb4a49fc40796ea4ea2072b3fb5ff85f, type: 3}
+  - {fileID: 21300000, guid: 9ffe3bbd6ebe3f749a0dce6d12c619c0, type: 3}
+  - {fileID: 21300000, guid: c9607acdf086ff440b519a001663582a, type: 3}
+  - {fileID: 21300000, guid: 5921c6fd96d29fe4bab35a67155d3886, type: 3}
+  - {fileID: 21300000, guid: 3cc4812e2a2446f4e9fbd57819429b66, type: 3}
+  - {fileID: 21300000, guid: 0454d34e14c189449becdc396f2f04b1, type: 3}
+  - {fileID: 21300000, guid: 15cd9bfe19fecce408ed351c12b3b639, type: 3}
+  - {fileID: 21300000, guid: 68acc74fee0744a4dab021b3d3bfdfe6, type: 3}
+  - {fileID: 21300000, guid: ea5b9a4fc9495ee47a48b1432f30fc5f, type: 3}
+  - {fileID: 21300000, guid: 725570afe2bdff14cb04dbe9fa4ac1fd, type: 3}
+  - {fileID: 21300000, guid: fb7fa0dfe9cf557429fad52bfc95e3cc, type: 3}
+  - {fileID: 21300000, guid: 15a43aef78b8fd0409d33860582bab84, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - BG_cercle_f03
+  - BG_grass_f01
+  - Haie_Angle_Bas
+  - BG_fleurs_f03
+  - Maison_Toit
+  - VeloV_Borne
+  - Travaux_Cone
+  - Parc_Haie_180
+  - PigeonIdle_f02
+  - "Maison_Fa\xE7ade"
+  - Parc_Grille_Simple
+  - Parterre_de_Fleur_01
+  - Parc_Porte_Laterale
+  - PassagePieton_Bandes
+  - Haie
+  - Trottoir_Haut
+  - Trottoir_Bas
+  - VeloV_Horodateur
+  - BG_Banc
+  - PigeonFly_02_f02
+  - BG_cercle_f02
+  - BG_grass_f02
+  - Route_01
+  - Parc_Grille_Simple_180
+  - Parc_Porte_Laterale_180
+  - Parc_Porte_Centrale
+  - Plaque_Egout_01
+  - PigeonIdle_02_f01
+  - PigeonFly_f02
+  - BG_fleurs_f02
+  - PigeonFly_f01
+  - Maison
+  - PigeonIdle_f01
+  - Allee_Pietonne
+  - VeloV_Velo
+  - BG_fleurs_f01
+  - Travaux_Trou_Sol
+  - Maison_Porte
+  - Parc_Haie
+  - PigeonFly_02_f01
+  - Travaux_panneau
+  - Haie_Angle
+  - Haie_Verticale
+  - BG_cercle_f01
+  - Travaux_Trou_Sol_Gros
+  - PigeonIdle_02_f02
+  - PassagePieton_Bande_Seule
+  m_RenderDataMap: {}
+  m_Tag: Props Atlas
+  m_IsVariant: 0
