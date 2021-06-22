@@ -235,6 +235,7 @@ MonoBehaviour:
   acceleration: 250
   footstepSoundFadeTime: 0
   footstepSoundFadeDuration: 0.5
+  forcedInput: {x: 0, y: 0}
   footstepSource: {fileID: 0}
   inputEnabled: 1
 --- !u!114 &5720798911809835051
@@ -259,7 +260,7 @@ MonoBehaviour:
   zOffset: 1
   pow: 1
   leashElements: []
-  leashElementPrefab: {fileID: 8038916373481924937, guid: 17af27777acd68f4295d7dd5c6f9d653, type: 3}
+  leashElementPrefab: {fileID: 2892740338287030155, guid: 17af27777acd68f4295d7dd5c6f9d653, type: 3}
 --- !u!120 &5720798911809835050
 LineRenderer:
   m_ObjectHideFlags: 0

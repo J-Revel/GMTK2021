@@ -15,7 +15,8 @@ public class LeashCollider : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 parentDirection = joint.connectedBody.transform.position - transform.position;
+        transform.position = (joint.connectedBody.transform.position + transform.parent.position) / 2;
         transform.rotation = Quaternion.LookRotation(parentDirection, Vector3.forward) * Quaternion.AngleAxis(90, rotAxis);
-        collider.size = new Vector2(0.02f, parentDirection.magnitude);
+        collider.size = new Vector2(0.02f, joint.distance);
     }
 }
