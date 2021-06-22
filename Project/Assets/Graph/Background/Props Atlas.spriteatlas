@@ -26,13 +26,13 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
+      enableRotation: 0
       enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 779fe442cd9380340b7f1d31348bd584, type: 3}
-    totalSpriteSurfaceArea: 33816226
+    totalSpriteSurfaceArea: 33025495
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -54,7 +54,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 36af8ef4afee7ac4d8089637e40d89cd, type: 3}
   - {fileID: 21300000, guid: 9ddf956578f08bc4ca58536f55ab2100, type: 3}
   - {fileID: 21300000, guid: a8f353a5bd7f0c54bb4e2ac5a7a78d16, type: 3}
-  - {fileID: 21300000, guid: e56c3fb538d8c1e40a798d5c787242cc, type: 3}
+  - {fileID: 2597166054109242308, guid: e56c3fb538d8c1e40a798d5c787242cc, type: 3}
   - {fileID: 21300000, guid: bacf7e162482d2c4aad1752b0c924f02, type: 3}
   - {fileID: 21300000, guid: ccc53fa6f53755144a75db7943732317, type: 3}
   - {fileID: 21300000, guid: 44b75ef664c4d1d4b9a6a1226f9008a3, type: 3}
@@ -102,7 +102,7 @@ SpriteAtlas:
   - PassagePieton_Bandes
   - Haie
   - Trottoir_Haut
-  - Trottoir_Bas
+  - Trottoir_Bas_0
   - VeloV_Horodateur
   - BG_Banc
   - PigeonFly_02_f02
