@@ -54,6 +54,7 @@ public class Leash : MonoBehaviour
             {
                 DistanceJoint2D newJoint = leashElements[i].gameObject.AddComponent<DistanceJoint2D>();
                 newJoint.connectedBody = leashElements[j].GetComponent<Rigidbody2D>();
+                newJoint.autoConfigureDistance = false;
                 newJoint.distance = (j - i) * segmentLength;
                 newJoint.maxDistanceOnly = true;
             }

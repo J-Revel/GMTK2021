@@ -57,6 +57,8 @@ public class FlyingGrandma : MonoBehaviour
             float angleRatio = Mathf.Abs(rigidbody.velocity.normalized.x);
             transform.localRotation = Quaternion.AngleAxis((isLeft ? 180 : 0), Vector3.forward);
             spriteRenderer.transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Slerp(Quaternion.identity, initialRot, angleRatio);
+            
+            Debug.Log(rigidbody.velocity.magnitude+ " " + velocityLandingThreshold);
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
                 landingThresholdTime += Time.deltaTime;
@@ -84,6 +86,6 @@ public class FlyingGrandma : MonoBehaviour
         animator.SetBool("flying", true);
         rigidbody.drag = flyingDrag;
         rigidbody.mass = flyingMass;
-        rigidbody.velocity = (dog.position - transform.position).normalized * flyingLaunchSpeed;
+        rigidbody.velocity = -joint.reactionForce.normalized * flyingLaunchSpeed;
     }
 }

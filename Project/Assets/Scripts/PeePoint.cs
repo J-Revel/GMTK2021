@@ -33,7 +33,6 @@ public class PeePoint : MonoBehaviour
         if(character != null)
         {
             character.SetCanPee(false);
-            activePoint = null;
         }
     }
 
