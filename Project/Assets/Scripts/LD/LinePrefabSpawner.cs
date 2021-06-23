@@ -4,37 +4,77 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
+public enum LineDirection
+{
+    Vertical, Horizontal
+}
+
 [ExecuteInEditMode]
 public class LinePrefabSpawner : MonoBehaviour
 {
-    public Transform start;
-    public Transform target;
-    public Transform spawnParent;
+    public LineDirection lineDirection;
+    public float targetDistance;
+    public GameObject spawnParent;
 
     public Transform[] prefabs;
     public float spawnDistance;
 
-    void Start()
-    {
-        
+    private bool isInPrefabEditor { get { return UnityEditor.SceneManagement.StageUtility.GetCurrentStage().GetType() == typeof(UnityEditor.Experimental.SceneManagement.PrefabStage); }}
+
+    public Vector3 targetPoint 
+    { 
+        get 
+        { 
+            Vector3 direction = transform.right;
+            if(lineDirection == LineDirection.Vertical)
+                direction = transform.up;
+            return transform.position + direction * targetDistance;
+        }
+
+        set
+        {
+            targetDistance = Vector3.Distance(transform.position, value);
+        }
     }
 
-    void Update()
+    public Vector3 targetDirection
     {
-        bool isInPrefabEditor = UnityEditor.SceneManagement.StageUtility.GetCurrentStage().GetType() == typeof(UnityEditor.Experimental.SceneManagement.PrefabStage));
-        if(!Application.isPlaying && prefabs.Length > 0 && target != null && !isInPrefabEditor)
+        get
         {
-            for(int i=0; i<spawnParent.childCount; i++)
-            {
-                DestroyImmediate(spawnParent.GetChild(spawnParent.childCount - 1 - i).gameObject);
-            }
-            float distance = Vector3.Distance(start.position, target.position);
-            int instanceCount = (int)(distance / spawnDistance);
-            for(int i=0; i<=instanceCount; i++)
-            {
-                Vector3 position = Vector3.Lerp(start.position, target.position, (float)i / instanceCount);
-                Instantiate(prefabs[Random.Range(0, prefabs.Length)], position, Quaternion.identity, spawnParent);
-            }
+            Vector3 direction = transform.right;
+            if(lineDirection == LineDirection.Vertical)
+                direction = transform.up;
+            return direction;
         }
+    }
+
+    void Start()
+    {
+        if(!isInPrefabEditor)
+        {
+            spawnParent = new GameObject("elements");
+            spawnParent.transform.parent = transform;
+        }
+    }
+
+    public void UpdateElements()
+    {
+        Debug.Log(transform.childCount);
+        for(int i=0; i<=transform.childCount; i++)
+        {
+            DestroyImmediate(transform.GetChild(0).gameObject);
+        }
+        spawnParent = new GameObject("elements");
+        spawnParent.transform.parent = transform;
+
+        int instanceCount = (int)(targetDistance / spawnDistance);
+        Vector3 direction = transform.right;
+        if(lineDirection == LineDirection.Vertical)
+            direction = transform.up;
+        for(int i=0; i<=instanceCount; i++)
+        {
+            Vector3 position = transform.position + direction * (targetDistance * i / instanceCount);
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)], position, Quaternion.identity, spawnParent.transform);
+        }        
     }
 }
