@@ -23,6 +23,7 @@ public class FlyingGrandma : MonoBehaviour
     
     public SpriteRenderer spriteRenderer;
     public Animator animator;
+    
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -37,17 +38,18 @@ public class FlyingGrandma : MonoBehaviour
     {
         currentVelocity = rigidbody.velocity.magnitude;
         bool isLeft = rigidbody.velocity.x < 0.01f;
+
         if(rigidbody.velocity.sqrMagnitude < 0.5f)
         {
             isLeft = (rigidbody.transform.position.x > dog.transform.position.x);
         }
+
         animator.SetBool("left", isLeft);
         animator.SetBool("pull", Vector3.Distance(transform.position, dog.position) > pullDistance);
         
         if(!flying)
         {
             spriteRenderer.transform.rotation = initialRot;
-            
         }
         else
         {

@@ -50,16 +50,11 @@ public class LinePrefabSpawner : MonoBehaviour
 
     void Start()
     {
-        if(!isInPrefabEditor)
-        {
-            spawnParent = new GameObject("elements");
-            spawnParent.transform.parent = transform;
-        }
+        UpdateElements();
     }
 
     public void UpdateElements()
     {
-        Debug.Log(transform.childCount);
         for(int i=0; i<=transform.childCount; i++)
         {
             DestroyImmediate(transform.GetChild(0).gameObject);
