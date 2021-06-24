@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
+#endif
 
 public enum LineDirection
 {
@@ -19,7 +22,17 @@ public class LinePrefabSpawner : MonoBehaviour
     public Transform[] prefabs;
     public float spawnDistance;
 
-    private bool isInPrefabEditor { get { return UnityEditor.SceneManagement.StageUtility.GetCurrentStage().GetType() == typeof(UnityEditor.Experimental.SceneManagement.PrefabStage); }}
+    private bool isInPrefabEditor
+    {
+        get
+        { 
+#if UNITY_EDITOR
+            return UnityEditor.SceneManagement.StageUtility.GetCurrentStage().GetType() == typeof(UnityEditor.Experimental.SceneManagement.PrefabStage);
+#else
+            return false;
+#endif
+        }
+    }
 
     public Vector3 targetPoint 
     { 
