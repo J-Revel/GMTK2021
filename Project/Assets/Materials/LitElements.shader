@@ -18,12 +18,15 @@ Shader "Custom/LitElements"
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
+        #include "UnityCG.cginc"
 
         sampler2D _MainTex;
 
         struct Input
         {
             float2 uv_MainTex;
+            float3 vertexNormal;
+            float3 viewDir;
         };
 
         half _Glossiness;
@@ -37,10 +40,20 @@ Shader "Custom/LitElements"
             // put more per-instance properties here
         UNITY_INSTANCING_BUFFER_END(Props)
 
+        void vert (inout appdata_full v, out Input o) {
+            UNITY_INITIALIZE_OUTPUT(Input,o);
+            o.vertexNormal = v.normal;
+            float3 binormal = cross( v.normal, v.tangent.xyz ) * v.tangent.w;
+            float3x3 rotation = float3x3( v.tangent.xyz, binormal, v.normal );
+            o.viewDir = mul (rotation, ObjSpaceViewDir(v.vertex));
+       }
+
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+            float3 n = IN.vertexNormal;
+            o.Normal = dot(IN.viewDir, float3(0, 0, 1)) > 0 ? o.Normal : -o.Normal;
             o.Albedo = c.rgb;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;

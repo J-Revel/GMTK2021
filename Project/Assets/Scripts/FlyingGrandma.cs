@@ -60,7 +60,6 @@ public class FlyingGrandma : MonoBehaviour
             transform.localRotation = Quaternion.AngleAxis((isLeft ? 180 : 0), Vector3.forward);
             spriteRenderer.transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Slerp(Quaternion.identity, initialRot, angleRatio);
             
-            Debug.Log(rigidbody.velocity.magnitude+ " " + velocityLandingThreshold);
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
                 landingThresholdTime += Time.deltaTime;

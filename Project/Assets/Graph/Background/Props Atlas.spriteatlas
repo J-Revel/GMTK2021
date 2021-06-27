@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 779fe442cd9380340b7f1d31348bd584, type: 3}
-    totalSpriteSurfaceArea: 33025495
+    totalSpriteSurfaceArea: 32422295
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -53,7 +53,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ae5d896438b0d7546a9c09cda1a53a86, type: 3}
   - {fileID: 21300000, guid: 36af8ef4afee7ac4d8089637e40d89cd, type: 3}
   - {fileID: 21300000, guid: 9ddf956578f08bc4ca58536f55ab2100, type: 3}
-  - {fileID: 21300000, guid: a8f353a5bd7f0c54bb4e2ac5a7a78d16, type: 3}
+  - {fileID: -6845328895962355600, guid: a8f353a5bd7f0c54bb4e2ac5a7a78d16, type: 3}
   - {fileID: 2597166054109242308, guid: e56c3fb538d8c1e40a798d5c787242cc, type: 3}
   - {fileID: 21300000, guid: bacf7e162482d2c4aad1752b0c924f02, type: 3}
   - {fileID: 21300000, guid: ccc53fa6f53755144a75db7943732317, type: 3}
@@ -101,7 +101,7 @@ SpriteAtlas:
   - Parc_Porte_Laterale
   - PassagePieton_Bandes
   - Haie
-  - Trottoir_Haut
+  - Trottoir_Haut_0
   - Trottoir_Bas_0
   - VeloV_Horodateur
   - BG_Banc

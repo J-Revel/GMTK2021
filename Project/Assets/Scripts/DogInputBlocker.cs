@@ -19,5 +19,6 @@ public class DogInputBlocker : MonoBehaviour
     public void FinishPee()
     {
         PeePoint.activePoint.OnPeeFinished();
+        EnableInput();
     }
 }
