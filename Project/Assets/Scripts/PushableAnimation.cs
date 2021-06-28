@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PushableAnimation : MonoBehaviour
 {
-    private float collisionDirection;
+    private Vector2 collisionDirection;
     public float animDuration = 0.3f;
     private float animTime = 0;
     private bool animStarted = false;
@@ -15,9 +15,8 @@ public class PushableAnimation : MonoBehaviour
     {
         if(collision.collider.GetComponent<Character>() != null)
         {
-            collisionDirection = Vector2.SignedAngle(Vector2.up, collision.collider.GetComponent<Rigidbody2D>().velocity);
+            collisionDirection = transform.position - collision.collider.transform.position;
             
-            Debug.Log(collisionDirection);
             animStarted = true;
             Destroy(collision.otherCollider);
         }
@@ -33,10 +32,18 @@ public class PushableAnimation : MonoBehaviour
         if(animStarted)
         {
             animTime += Time.deltaTime;
-            Quaternion targetRotation = Quaternion.AngleAxis(collisionDirection, Vector3.forward);
-            // Debug.Log(collisionDirection);
-            if(collisionDirection >= 90 || collisionDirection < -90)
-                targetRotation = Quaternion.AngleAxis(180 - collisionDirection, Vector3.forward) * Quaternion.Euler(180, 0, 0);
+            float upAngle = Vector2.SignedAngle(Vector2.up, collisionDirection);
+            Quaternion targetRotation = Quaternion.AngleAxis(upAngle, Vector3.forward);
+            if(collisionDirection.y > 0)
+            {
+                
+
+            }
+            else
+            {
+                float downAngle = Vector2.SignedAngle(Vector2.down, collisionDirection);
+                targetRotation = Quaternion.AngleAxis(180, Vector3.right) * Quaternion.AngleAxis(downAngle, -Vector3.forward);
+            }
             displayTransform.rotation = Quaternion.Lerp(startRotation, targetRotation, animTime / animDuration);
             //else
             // {
