@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a24986360a45c34e8f1d380c3b66d04, type: 3}
+  m_Name: Characters Anim List
+  m_EditorClassIdentifier: 
+  spriteAnims:
+  - name: left
+    spriteAnim:
+      sprites:
+      - {fileID: 21300000, guid: 6a06914b334aca347abe2b7913947d12, type: 3}
+      - {fileID: 21300000, guid: a8337ea45b10d4f4086764937ba14977, type: 3}
+      framePerSecond: 2
+  - name: right
+    spriteAnim:
+      sprites:
+      - {fileID: 21300000, guid: 6a06914b334aca347abe2b7913947d12, type: 3}
+      - {fileID: 21300000, guid: a8337ea45b10d4f4086764937ba14977, type: 3}
+      framePerSecond: 2

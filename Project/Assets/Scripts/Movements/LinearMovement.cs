@@ -6,6 +6,22 @@ public enum Direction
 {
     Up, Down, Left, Right,
 }
+
+public enum LoopType
+{
+    Uturn,
+    
+}
+
+[System.Serializable]
+public struct LinearMovementConfig
+{
+    public float movementSpeed;
+    public Direction direction;
+    public float loopDuration;
+    public LoopType uturn;
+}
+
 public class LinearMovement : MonoBehaviour
 {
     public Direction direction;
