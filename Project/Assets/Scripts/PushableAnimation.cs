@@ -1,24 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PushableAnimation : MonoBehaviour
 {
-    private Vector2 collisionDirection;
     public float animDuration = 0.3f;
+    public Transform displayTransform;
+    public CharacterDisplay characterDisplay;
+
+
+    private Vector2 collisionDirection;
     private float animTime = 0;
     private bool animStarted = false;
-    public Transform displayTransform;
     private Quaternion startRotation;
+    public UnityEvent pushedEvent;
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.GetComponent<Character>() != null)
         {
             collisionDirection = transform.position - collision.collider.transform.position;
-            
+            characterDisplay.playing = false;
             animStarted = true;
             Destroy(collision.otherCollider);
+            pushedEvent.Invoke();
         }
     }
 

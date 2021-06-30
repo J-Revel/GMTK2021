@@ -30,7 +30,7 @@ public class SpriteAnimRefDrawer : PropertyDrawer {
         EditorGUI.PropertyField(libRect, animListProp);
         SpriteAnimList animList = (SpriteAnimList)animListProp.objectReferenceValue;
         string selectedName = animNameProp.stringValue;
-        int selectedIndex = 0;
+        int selectedIndex = -1;
         if(animList != null)
         {
             string[] options = new string[animList.spriteAnims.Length];
@@ -42,7 +42,7 @@ public class SpriteAnimRefDrawer : PropertyDrawer {
                     selectedIndex = i;
                 }
             }
-            int newSelectedIndex = EditorGUI.Popup(typeRect, selectedIndex, options);
+            int newSelectedIndex = EditorGUI.Popup(typeRect, Mathf.Max(0, selectedIndex), options);
             if(newSelectedIndex != selectedIndex)
             {
                 animNameProp.stringValue = options[newSelectedIndex];

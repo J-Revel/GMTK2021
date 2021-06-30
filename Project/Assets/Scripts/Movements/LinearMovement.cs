@@ -7,6 +7,11 @@ public enum Direction
     Up, Down, Left, Right,
 }
 
+public enum LookDirection
+{
+    Right, Left
+}
+
 public enum LoopType
 {
     Uturn,
@@ -31,14 +36,14 @@ public class LinearMovement : MonoBehaviour
     private Vector3 startPosition;
     private new Rigidbody2D rigidbody;
     public bool uturn = false;
-    private Animator animator;
+    private CharacterDisplay characterDisplay;
     private bool left = false;
 
     void Start()
     {
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
+        characterDisplay = GetComponent<CharacterDisplay>();
         switch(direction)
         {
             case Direction.Up:
@@ -69,6 +74,7 @@ public class LinearMovement : MonoBehaviour
                 if(direction == Direction.Right || direction == Direction.Left)
                 {
                     left = !left;
+                    characterDisplay.lookDirection = left ? LookDirection.Left : LookDirection.Right;
                 }
             }
             else
@@ -76,7 +82,10 @@ public class LinearMovement : MonoBehaviour
                 transform.position = startPosition;
             }
         }
-        if(animator != null)
-            animator.SetBool("left", left);
+    }
+
+    void OnDisable()
+    {
+        rigidbody.velocity = Vector2.zero;
     }
 }
