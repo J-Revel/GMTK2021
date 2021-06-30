@@ -32,7 +32,7 @@ public class PeePoint : MonoBehaviour
         Character character = collider.GetComponent<Character>();
         if(character != null)
         {
-            character.SetCanPee(false);
+            // character.SetCanPee(false);
         }
     }
 

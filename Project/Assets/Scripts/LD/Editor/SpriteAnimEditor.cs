@@ -1,57 +1,35 @@
-using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEditor;
 
-[CustomPropertyDrawer( typeof( SpriteAnimRef ) )]
-public class SpriteAnimRefDrawer : PropertyDrawer {
+public class AnimEditor : EditorWindow
+{
+    [MenuItem ("Window/Anim Editor")]
 
-    public override float GetPropertyHeight( SerializedProperty property, GUIContent label ) {
-        // The 6 comes from extra spacing between the fields (2px each)
-        return EditorGUIUtility.singleLineHeight * 2 + 6;
+    public static void  ShowWindow () {
+        EditorWindow.GetWindow(typeof(AnimEditor));
     }
 
-    public override void OnGUI( Rect position, SerializedProperty property, GUIContent label ) {
-        // EditorGUI.BeginProperty( position, label, property );
+    private bool groupEnabled = false;
+    private bool myBool;
+    private float myFloat;
+    private SpriteAnimList animList;
+    private SerializedObject serializedAnimList;
 
-        // EditorGUI.LabelField( position, label );
-
-        // EditorGUI.indentLevel++;
-
-        // var nameRect = EditorGUILayout.BeginHorizontal ();
-        // EditorGUI.PropertyField( nameRect, property.FindPropertyRelative( "animName" ), GUIContent.none);
-        // EditorGUILayout.EndHorizontal();
-        // var nameRect = EditorGUILayout.BeginHorizontal ();
-        Rect libRect = position;
-        libRect.height = EditorGUIUtility.singleLineHeight;
-        Rect typeRect = libRect;
-        typeRect.y += EditorGUIUtility.singleLineHeight;
-        SerializedProperty animListProp = property.FindPropertyRelative("animList");
-        SerializedProperty animNameProp = property.FindPropertyRelative("animName");
-        EditorGUI.PropertyField(libRect, animListProp);
-        SpriteAnimList animList = (SpriteAnimList)animListProp.objectReferenceValue;
-        string selectedName = animNameProp.stringValue;
-        int selectedIndex = -1;
-        if(animList != null)
+    void OnGUI()
+    {
+        SpriteAnimList newAnimList = (SpriteAnimList)EditorGUILayout.ObjectField(animList, typeof(SpriteAnimList), false, null);
+        if(newAnimList != animList)
         {
-            string[] options = new string[animList.spriteAnims.Length];
-            for(int i=0; i<animList.spriteAnims.Length; i++)
-            {
-                options[i] = animList.spriteAnims[i].name;
-                if(options[i] == selectedName)
-                {
-                    selectedIndex = i;
-                }
-            }
-            int newSelectedIndex = EditorGUI.Popup(typeRect, Mathf.Max(0, selectedIndex), options);
-            if(newSelectedIndex != selectedIndex)
-            {
-                animNameProp.stringValue = options[newSelectedIndex];
-            }
+            serializedAnimList = new SerializedObject(newAnimList);
+            animList = newAnimList;
         }
-        // EditorGUILayout.EndHorizontal();
-
-        // EditorGUI.indentLevel--;
-
-        // EditorGUI.EndProperty();
+        SerializedProperty animsListProp = serializedAnimList.FindProperty("spriteAnims");
+        for(int i=0; i<animsListProp.arraySize; i++)
+        {
+            string animName = animsListProp.GetArrayElementAtIndex(i).FindPropertyRelative("animName").stringValue;
+            EditorGUILayout.SelectableLabel(animName);
+        }
     }
 }

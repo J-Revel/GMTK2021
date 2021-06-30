@@ -16,13 +16,11 @@ public class Character : MonoBehaviour
     public bool inputEnabled = true;
     
     
-    // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -33,7 +31,7 @@ public class Character : MonoBehaviour
             animator.SetBool("left", false);
         if(Input.GetAxis("Horizontal") < 0)
             animator.SetBool("left", true);
-        animator.SetBool("run", inputVector.sqrMagnitude > 0.5);
+        animator.SetBool("run", inputVector.sqrMagnitude > 0.01);
         animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
         if(footstepSource != null)
         {
@@ -60,5 +58,6 @@ public class Character : MonoBehaviour
     public void EnableInput()
     {
         inputEnabled = true;
+        animator.SetBool("canPee", false);
     }
 }
