@@ -19,6 +19,7 @@ public class MenuCharacter : MonoBehaviour
     public float stopTimeMax = 7;
     private float time = 5;
     private bool running = true;
+    public bool active = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,30 +27,38 @@ public class MenuCharacter : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    public void StartRunning()
+    {
+        active = true;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        time -= Time.deltaTime;
-        if(time <= 0)
+        if(active)
         {
-            running = !running;
-            if(running)
-                time += Random.Range(runTimeMin, runTimeMax);
-            else
-                time += Random.Range(stopTimeMin, stopTimeMax);
+            time -= Time.deltaTime;
+            if(time <= 0)
+            {
+                running = !running;
+                if(running)
+                    time += Random.Range(runTimeMin, runTimeMax);
+                else
+                    time += Random.Range(stopTimeMin, stopTimeMax);
+            }
+            Vector2 inputVector = mainInputVector;// * (running ? 1 : 0);
+            rigidbody.AddForce(inputVector.normalized * acceleration, ForceMode2D.Force);
+            if(inputVector.x > 0)
+                animator.SetBool("left", false);
+            if(inputVector.x < 0)
+                animator.SetBool("left", true);
+            animator.SetBool("run", inputVector.sqrMagnitude > 0.5);
+            animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
+            if(inputVector.sqrMagnitude > 0.5)
+            {
+                footstepSource.volume = Mathf.Min((inputVector.magnitude - 0.7f) * 3, 1);
+            }
+            else footstepSource.volume = 0;
         }
-        Vector2 inputVector = mainInputVector * (running ? 1 : 0);
-        rigidbody.AddForce(inputVector.normalized * acceleration, ForceMode2D.Force);
-        if(inputVector.x > 0)
-            animator.SetBool("left", false);
-        if(inputVector.x < 0)
-            animator.SetBool("left", true);
-        animator.SetBool("run", inputVector.sqrMagnitude > 0.5);
-        animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
-        if(inputVector.sqrMagnitude > 0.5)
-        {
-            footstepSource.volume = Mathf.Min((inputVector.magnitude - 0.7f) * 3, 1);
-        }
-        else footstepSource.volume = 0;
     }
 }

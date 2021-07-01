@@ -22,7 +22,7 @@ public class PeePoint : MonoBehaviour
         Character character = collider.GetComponent<Character>();
         if(character != null)
         {
-            character.SetCanPee(true);
+            character.StartPeing();
             activePoint = this;
         }
     }
