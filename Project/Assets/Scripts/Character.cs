@@ -15,6 +15,9 @@ public class Character : MonoBehaviour
     public AudioSource footstepSource;
     public bool inputEnabled = true;
     
+    private float peeDuration = 2;
+    private float peeTime = 0;
+    private bool peeing = false;
     
     void Start()
     {
@@ -41,23 +44,25 @@ public class Character : MonoBehaviour
             }
             else footstepSource.volume = 0;
         }
+        if(peeing)
+        {
+            peeTime += Time.fixedDeltaTime;
+            if(peeTime > peeDuration)
+            {
+                peeTime = 0;
+                peeing = false;
+                animator.SetBool("canPee", false);
+                inputEnabled = true;
+                PeePoint.activePoint.OnPeeFinished();
+            }
+        }
     }
 
-    public void SetCanPee(bool canPee)
+    public void StartPeing()
     {
-        animator.SetBool("canPee", canPee);
-        if(canPee)
-            StopInput();
-    }
-
-    public void StopInput()
-    {
+        animator.SetBool("canPee", true);
+        peeTime = 0;
+        peeing = true;
         inputEnabled = false;
-    }
-
-    public void EnableInput()
-    {
-        inputEnabled = true;
-        animator.SetBool("canPee", false);
     }
 }

@@ -14,6 +14,5 @@ public class GameEndZone : MonoBehaviour
     void OnEnteredZone(Character character)
     {
         Instantiate(menuPrefab);
-        character.StopInput();
     }
 }
