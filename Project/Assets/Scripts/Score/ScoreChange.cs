@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ScoreChange : MonoBehaviour
 {
-    public int bonus = 100;
-    public Stat statToIncrement;
+    public string statToIncrement;
 
     void Start()
     {
-        ScoreService.instance.currentScore += bonus;
         ScoreService.instance.IncrStat(statToIncrement);
     }
 }

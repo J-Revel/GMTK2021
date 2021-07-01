@@ -262,5 +262,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20403841d246dca4687c0077d128cccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonus: 50
   statToIncrement: 3

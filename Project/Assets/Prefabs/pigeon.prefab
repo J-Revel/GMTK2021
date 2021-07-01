@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1491950093681231231}
   - component: {fileID: 6688561773291530372}
   - component: {fileID: 2334376563399585596}
+  - component: {fileID: 6569970910104256309}
   m_Layer: 0
   m_Name: pigeon
   m_TagString: Untagged
@@ -135,6 +136,18 @@ MonoBehaviour:
           m_StringArgument: fly
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6569970910104256309}
+        m_TargetAssemblyTypeName: StatElement, Assembly-CSharp
+        m_MethodName: IncrStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1491950093681231231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 8072669675500175205, guid: 7189edf912c7eed4f9dcc15e80fc25ba, type: 3}
+  - {fileID: 8072669675500175205, guid: 2bd03fce61e93874580fc6a860779ed1, type: 3}
 --- !u!114 &6688561773291530372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +191,19 @@ MonoBehaviour:
   takeoffTarget: {fileID: 362840532387793676}
   finalTarget: {fileID: 5080160012392090918}
   lerpDuration: 1
+--- !u!114 &6569970910104256309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687309078474111591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba326daef8f010c4b9271d2afb13d4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statName: pigeon
 --- !u!1 &2831935343019332939
 GameObject:
   m_ObjectHideFlags: 0

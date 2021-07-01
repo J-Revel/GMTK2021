@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class StatDisplay : MonoBehaviour
 {
-    public Stat stat;
+    public string stat;
     public int multiplier;
     public string prefix;
-    private TMPro.TextMeshProUGUI text;
+    private TMPro.TextMeshProUGUI uiText;
+    private TMPro.TextMeshPro text;
 
     private void Start()
     {
-        text = GetComponent<TMPro.TextMeshProUGUI>();
+        uiText = GetComponent<TMPro.TextMeshProUGUI>();
+        text = GetComponent<TMPro.TextMeshPro>();
     }
 
     void Update()
     {
-        text.text = prefix + (ScoreService.instance.stats[(int)stat] * multiplier);
+        if(text != null)
+            text.text = prefix + ScoreService.instance.GetStat(stat).value + "/" + ScoreService.instance.GetStat(stat).max;
+        if(uiText != null)
+            uiText.text = prefix + ScoreService.instance.GetStat(stat).value + "/" + ScoreService.instance.GetStat(stat).max;
     }
 }

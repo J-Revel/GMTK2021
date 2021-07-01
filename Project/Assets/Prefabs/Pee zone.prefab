@@ -208,6 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2438029148773282059}
+  - component: {fileID: 808935701567726370}
   m_Layer: 6
   m_Name: Pee zone
   m_TagString: Untagged
@@ -233,6 +234,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &808935701567726370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2438029148773282055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba326daef8f010c4b9271d2afb13d4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statName: pee
 --- !u!1 &3087063704649374438
 GameObject:
   m_ObjectHideFlags: 0
