@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 148990339349273375}
   - component: {fileID: 388096172198987370}
   - component: {fileID: 3232693075660249863}
+  - component: {fileID: 2938194365762203339}
   m_Layer: 0
   m_Name: Stat Malus
   m_TagString: Untagged
@@ -251,4 +252,20 @@ MonoBehaviour:
   stat: pigeon
   multiplier: 0
   prefix: 
-  isDefeatCondition: 1
+  isFx: 0
+  _color: {r: 0, g: 0, b: 0, a: 0}
+  updateEachFrame: 0
+--- !u!114 &2938194365762203339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072669675500175207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d7e569bbc50d74fb9e7e938b26df7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusColor: {r: 0.1764706, g: 0.77254903, b: 0.14901961, a: 1}
+  malusColor: {r: 0.8392157, g: 0, b: 0, a: 1}

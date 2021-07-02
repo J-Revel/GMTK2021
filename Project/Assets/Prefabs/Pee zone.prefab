@@ -289,6 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba326daef8f010c4b9271d2afb13d4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  incrementMax: 1
+  setMaxFromConfig: 0
   statName: pee
 --- !u!1 &7422308401998295754
 GameObject:
@@ -436,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35548432526284014, guid: fef7c3c200bcff4419eba38a5141098f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 35548432526284014, guid: fef7c3c200bcff4419eba38a5141098f, type: 3}
       propertyPath: m_LocalPosition.z

@@ -7,9 +7,14 @@ public class GameEndZone : MonoBehaviour
     public Animator successElement;
     public Animator failureElement;
     public Transform instanceContainer;
+    public float transitionDelay = 3;
+    private float transitionTime;
+    private bool doingTransition = false;
+    private SceneTransition sceneTransition;
     void Start()
     {
         GetComponent<CharacterSensor>().triggeredDelegate += OnEnteredZone;
+        sceneTransition = GetComponent<SceneTransition>();
     }
 
     // Update is called once per frame
@@ -35,7 +40,23 @@ public class GameEndZone : MonoBehaviour
             }
         }
         if(success)
+        {
             successElement.SetTrigger("Play");
+            doingTransition = true;
+        }
         else failureElement.SetTrigger("Play");
+    }
+
+    void Update()
+    {
+        if(doingTransition)
+        {
+            transitionTime += Time.deltaTime;
+            if(transitionTime >= transitionDelay)
+            {
+                sceneTransition.StartTransition();
+                doingTransition = false;
+            }
+        }
     }
 }
