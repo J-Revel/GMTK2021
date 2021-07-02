@@ -22,7 +22,8 @@ public class PushableAnimation : MonoBehaviour
         if(collision.collider.GetComponent<Character>() != null)
         {
             collisionDirection = transform.position - collision.collider.transform.position;
-            characterDisplay.playing = false;
+            if(characterDisplay != null)
+                characterDisplay.playing = false;
             animStarted = true;
             Destroy(collision.otherCollider);
             pushedEvent.Invoke();

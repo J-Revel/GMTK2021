@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BirdFlyMovement : MonoBehaviour
 {
+    public UnityEvent takeoffEvent;
     public float takeoffSpeed = 3;
     public float finalSpeed = 5;
     public Transform takeoffTarget;
@@ -22,6 +24,8 @@ public class BirdFlyMovement : MonoBehaviour
     
     public void TakeOff()
     {
+        if(!playing)
+            takeoffEvent.Invoke();
         playing = true;
     }
 

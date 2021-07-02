@@ -16,7 +16,7 @@ MonoBehaviour:
   objectives:
   - statName: damage
     value: 15
-    condition: 4
+    isDefeatCondition: 1
   - statName: knock
     value: 5
-    condition: 4
+    isDefeatCondition: 1

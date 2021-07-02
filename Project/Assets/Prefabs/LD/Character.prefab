@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5739680696069769614}
   - component: {fileID: 116182040102603850}
+  - component: {fileID: 3280256337247566035}
+  - component: {fileID: 1155866504447170899}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -54,6 +56,36 @@ MonoBehaviour:
   playing: 1
   directionChangeDuration: 0.3
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3280256337247566035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5739680696069769602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba326daef8f010c4b9271d2afb13d4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incrementMax: 0
+  setMaxFromConfig: 1
+  statName: knock
+--- !u!114 &1155866504447170899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5739680696069769602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f163e3ccb463114c917f4ade4df006d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: knock
+  prefab: {fileID: 3232693075660249863, guid: c673c19e088ea3b40b99a9230210c75a, type: 3}
+  instanceContainer: {fileID: 0}
 --- !u!1 &5739680696450481422
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +177,30 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4541171343754407236}
         m_TargetAssemblyTypeName: Instantiator, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3280256337247566035}
+        m_TargetAssemblyTypeName: StatElement, Assembly-CSharp
+        m_MethodName: IncrStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1155866504447170899}
+        m_TargetAssemblyTypeName: StatFXSpawner, Assembly-CSharp
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:

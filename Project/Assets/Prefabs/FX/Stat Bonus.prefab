@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 148990339974773304}
   - component: {fileID: 148990339974773310}
   - component: {fileID: 148990339974773311}
-  - component: {fileID: 8722903850915356699}
   m_Layer: 0
   m_Name: Point Display
   m_TagString: Untagged
@@ -171,21 +170,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &8722903850915356699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148990339974773305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db76fde965c93544bafec7bc7e6d175f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stat: pigeon
-  multiplier: 0
-  prefix: 
 --- !u!1 &8072669675500175207
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,8 +181,7 @@ GameObject:
   - component: {fileID: 8072669675500175205}
   - component: {fileID: 148990339349273375}
   - component: {fileID: 388096172198987370}
-  - component: {fileID: 7121509000984287440}
-  - component: {fileID: 8097516440176200367}
+  - component: {fileID: 3232693075660249863}
   m_Layer: 0
   m_Name: Stat Bonus
   m_TagString: Untagged
@@ -253,7 +236,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7121509000984287440
+--- !u!114 &3232693075660249863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,20 +245,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8072669675500175207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aab3f34ec24cb3644898fdaf89ae24db, type: 3}
+  m_Script: {fileID: 11500000, guid: db76fde965c93544bafec7bc7e6d175f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 2
---- !u!114 &8097516440176200367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8072669675500175207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20403841d246dca4687c0077d128cccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statToIncrement: 3
+  stat: pigeon
+  multiplier: 0
+  prefix: 

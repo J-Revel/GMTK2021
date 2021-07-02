@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameEndZone : MonoBehaviour
 {
-    public Transform menuPrefab;
+    public Animator successElement;
+    public Animator failureElement;
+    public Transform instanceContainer;
     void Start()
     {
         GetComponent<CharacterSensor>().triggeredDelegate += OnEnteredZone;
@@ -13,6 +15,27 @@ public class GameEndZone : MonoBehaviour
     // Update is called once per frame
     void OnEnteredZone(Character character)
     {
-        Instantiate(menuPrefab);
+        bool success = true;
+        foreach(var objective in GameLauncher.instance.config.objectives)
+        {
+            StatValue stat = ScoreService.instance.GetStat(objective.statName);
+            if(objective.isDefeatCondition)
+            {
+                if(stat.value > stat.max)
+                {
+                    success = false;
+                }
+            }
+            else
+            {
+                if(stat.value < stat.max)
+                {
+                    success = false;
+                }
+            }
+        }
+        if(success)
+            successElement.SetTrigger("Play");
+        else failureElement.SetTrigger("Play");
     }
 }

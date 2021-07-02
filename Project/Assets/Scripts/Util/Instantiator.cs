@@ -9,6 +9,6 @@ public class Instantiator : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(prefab, transform.position, transform.rotation, instanceContainer);
+        Instantiate(prefab, transform.position, Quaternion.identity, instanceContainer);
     }
 }

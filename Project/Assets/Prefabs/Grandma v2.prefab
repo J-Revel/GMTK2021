@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 1168499526652176492}
   - component: {fileID: 7141662771851211503}
   - component: {fileID: 7141662771851211502}
+  - component: {fileID: 7463226581690796439}
   m_Layer: 9
   m_Name: Grandma v2
   m_TagString: Untagged
@@ -238,6 +239,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ca16bc5ed1f3c4b954ffe5c9a6611a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7463226581690796439}
+        m_TargetAssemblyTypeName: StatFXSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   minVelocity: 3
   invincibilityDuration: 1
 --- !u!114 &7141662771851211503
@@ -273,3 +289,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7463226581690796439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141662771851211497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f163e3ccb463114c917f4ade4df006d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: damage
+  prefab: {fileID: 3232693075660249863, guid: c673c19e088ea3b40b99a9230210c75a, type: 3}
+  instanceContainer: {fileID: 0}

@@ -16,7 +16,7 @@ MonoBehaviour:
   objectives:
   - statName: time
     value: 120
-    condition: 4
+    isDefeatCondition: 1
   - statName: damage
     value: 20
-    condition: 4
+    isDefeatCondition: 1

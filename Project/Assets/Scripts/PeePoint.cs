@@ -6,6 +6,7 @@ public class PeePoint : MonoBehaviour
 {
     public static PeePoint activePoint;
     public Transform fxPrefab;
+    public UnityEngine.Events.UnityEvent peeFinishedEvent;
 
     void Start()
     {
@@ -38,7 +39,7 @@ public class PeePoint : MonoBehaviour
 
     public void OnPeeFinished()
     {
-        Instantiate(fxPrefab, transform.position, transform.rotation);
+        peeFinishedEvent.Invoke();
         Destroy(gameObject);
     }
 }

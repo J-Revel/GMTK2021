@@ -3797,7 +3797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Level 2 : \nMAXIMUM DESTRUCTION"
+  m_text: "Level 2 : \nAgent of Chaos"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0327786d7e83ef34db3e230a3190d966, type: 2}
   m_sharedMaterial: {fileID: 5419067400530750608, guid: 0327786d7e83ef34db3e230a3190d966, type: 2}

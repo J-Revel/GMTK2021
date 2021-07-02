@@ -8,7 +8,7 @@ public class GameLauncher : MonoBehaviour
 
     public GameConfig config;
 
-    void Start()
+    void Awake()
     {
         if(instance == null)
         {
