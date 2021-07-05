@@ -6,12 +6,14 @@ public class RandomSound : MonoBehaviour
 {
     public AudioClip[] clips;
     private AudioSource source;
+    public bool playOnStart = true;
 
     void Start()
     {
         source = GetComponent<AudioSource>();
         source.clip = clips[Random.Range(0, clips.Length)];
-        source.Play();
+        if(playOnStart)
+            source.Play();
     }
 
     void Update()

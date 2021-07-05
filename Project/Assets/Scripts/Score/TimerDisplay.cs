@@ -12,6 +12,7 @@ public class TimerDisplay : MonoBehaviour
 
     void Update()
     {
-        text.text = Mathf.FloorToInt(ScoreService.instance.gameTime / 60).ToString("00") + ":" + (ScoreService.instance.gameTime % 60).ToString("00");
+        int time = Mathf.Max(0, Mathf.FloorToInt(ScoreService.instance.gameTime));
+        text.text = Mathf.FloorToInt(time / 60).ToString("00") + ":" + (time % 60).ToString("00");
     }
 }

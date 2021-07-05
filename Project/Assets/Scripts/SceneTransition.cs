@@ -25,11 +25,12 @@ public class SceneTransition : MonoBehaviour
 
     void Update()
     {
-        if(fadeElement != null)
-            fadeElement.alpha = fadeTime / fadeDuration;
+        
         if(transition)
         {
             fadeTime += Time.deltaTime;
+            if(fadeElement != null)
+                fadeElement.alpha = fadeTime / fadeDuration;
             if(fadeTime > fadeDuration)
             {
                 transition = false;

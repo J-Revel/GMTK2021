@@ -10,15 +10,7 @@ public class StatElement : MonoBehaviour
 
     void Start()
     {
-        if(setMaxFromConfig)
-        {
-            foreach(var objective in GameLauncher.instance.config.objectives)
-            {
-                if(objective.statName == statName)
-                    ScoreService.instance.SetStatMax(statName, objective.value);
-            }
-        }
-        if(incrementMax)
+        if(incrementMax && GameLauncher.instance.config.GetObjective(statName).countElements)
             ScoreService.instance.IncrStatMax(statName);
     }
 
