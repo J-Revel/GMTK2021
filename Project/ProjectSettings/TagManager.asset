@@ -18,8 +18,8 @@ TagManager:
   - Dog
   - invisible wall
   - MovingObstacle
-  - 
-  - 
+  - Ground
+  - GroundFeature
   - 
   - 
   - 

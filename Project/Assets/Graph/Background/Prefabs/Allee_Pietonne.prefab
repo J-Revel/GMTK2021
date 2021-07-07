@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7428015834212079025}
   - component: {fileID: 8142899311998257060}
   - component: {fileID: 2795603958277717260}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Allee_Pietonne
   m_TagString: Untagged
   m_Icon: {fileID: 0}

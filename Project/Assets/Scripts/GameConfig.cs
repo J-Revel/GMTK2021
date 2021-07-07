@@ -11,8 +11,11 @@ public enum ObjectiveCondition
 public struct StatObjective
 {
     public string statName;
-    public int value;
+    public int startValue;
+    public int maxValue;
     public bool isDefeatCondition;
+
+    public bool countElements;
 }
 
 [CreateAssetMenu]

@@ -8,7 +8,7 @@ public class ShadowCaster : MonoBehaviour
     {
         Renderer renderer = GetComponent<Renderer>();
         renderer.receiveShadows = true;
-        renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.TwoSided;
+        renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
     }
 
     // Update is called once per frame

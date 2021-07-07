@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 116182040102603850}
   - component: {fileID: 3280256337247566035}
   - component: {fileID: 1155866504447170899}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7773464854205030052}
   - component: {fileID: 4541171343754407236}
   - component: {fileID: 2228373417909551007}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 7966181395100119706}
   - component: {fileID: 7966181395100119707}
   - component: {fileID: 7966181395100119705}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
