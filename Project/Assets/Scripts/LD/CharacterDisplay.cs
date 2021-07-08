@@ -7,6 +7,7 @@ public class CharacterDisplay : MonoBehaviour
 {
     public new SpriteAnimRef animation;
     public SpriteRenderer renderer;
+    public Transform rendererTransform;
     public float animTime;
     public LookDirection lookDirection;
     public bool playing = true;
@@ -21,9 +22,9 @@ public class CharacterDisplay : MonoBehaviour
         renderer.sprite = animation.GetSprite(animTime);
         if(Application.isPlaying)
         {
-            initialRotation = renderer.transform.localRotation;
+            initialRotation = rendererTransform.localRotation;
             directionAnimTime = (lookDirection == LookDirection.Right) ? directionChangeDuration : 0;
-            renderer.transform.localRotation = initialRotation * Quaternion.AngleAxis((directionAnimTime * 180 / directionChangeDuration), Vector3.up);
+            rendererTransform.localRotation = initialRotation * Quaternion.AngleAxis((directionAnimTime * 180 / directionChangeDuration), Vector3.up);
         }
     }
 
@@ -37,14 +38,14 @@ public class CharacterDisplay : MonoBehaviour
             {
                 directionAnimTime -= Time.deltaTime;
                 directionAnimTime = Mathf.Max(0, directionAnimTime);
-                renderer.transform.localRotation = initialRotation * Quaternion.AngleAxis((directionAnimTime * 180 / directionChangeDuration), Vector3.up);
+                rendererTransform.localRotation = initialRotation * Quaternion.AngleAxis((directionAnimTime * 180 / directionChangeDuration), Vector3.up);
             }
             
             if(directionAnimTime <= directionChangeDuration && lookDirection == LookDirection.Right)
             {
                 directionAnimTime += Time.deltaTime;
                 directionAnimTime = Mathf.Min(directionAnimTime, directionChangeDuration);
-                renderer.transform.localRotation = initialRotation * Quaternion.AngleAxis((directionAnimTime * 180 / directionChangeDuration), Vector3.up);
+                rendererTransform.localRotation = initialRotation * Quaternion.AngleAxis((directionAnimTime * 180 / directionChangeDuration), Vector3.up);
             }
         }
         else animTime = 0;
