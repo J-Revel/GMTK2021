@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
+    
     private new Rigidbody2D rigidbody;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -14,6 +16,7 @@ public class Character : MonoBehaviour
     public Vector2 forcedInput;
     public AudioSource footstepSource;
     public bool inputEnabled = true;
+    private Vector2 input;
     
     private float peeDuration = 2;
     private float peeTime = 0;
@@ -26,21 +29,20 @@ public class Character : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if(!inputEnabled)
-            inputVector = Vector3.zero;
-        rigidbody.AddForce(inputVector.normalized * acceleration * rigidbody.mass, ForceMode2D.Force);
-        if(Input.GetAxis("Horizontal") > 0)
+            input = Vector3.zero;
+        rigidbody.AddForce(input.normalized * acceleration * rigidbody.mass, ForceMode2D.Force);
+        if(input.x > 0)
             animator.SetBool("left", false);
-        if(Input.GetAxis("Horizontal") < 0)
+        if(input.x < 0)
             animator.SetBool("left", true);
-        animator.SetBool("run", inputVector.sqrMagnitude > 0.01);
+        animator.SetBool("run", input.sqrMagnitude > 0.01);
         animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
         if(footstepSource != null)
         {
-            if(inputVector.sqrMagnitude > 0.5)
+            if(input.sqrMagnitude > 0.5)
             {
-                footstepSource.volume = Mathf.Min((inputVector.magnitude - 0.7f) * 3, 1);
+                footstepSource.volume = Mathf.Min((input.magnitude - 0.7f) * 3, 1);
             }
             else footstepSource.volume = 0;
         }
@@ -64,5 +66,10 @@ public class Character : MonoBehaviour
         peeTime = 0;
         peeing = true;
         inputEnabled = false;
+    }
+
+    private void OnMovement(InputValue value)
+    {
+        this.input = value.Get<Vector2>();
     }
 }
