@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: d03a650fde6d1d24092a378a12269d1c, type: 3}
-    totalSpriteSurfaceArea: 3780669
+    totalSpriteSurfaceArea: 3863901
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -41,12 +41,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f0bb0d542afe1e0469e7cb66e1280868, type: 3}
   - {fileID: 21300000, guid: 7970c906824b05949abcd1c97fa89cec, type: 3}
   - {fileID: 21300000, guid: e6e256b6ea7957044bb5e83fe53a568c, type: 3}
+  - {fileID: 21300000, guid: 17e92569f2dcf5045b3635dc5517ce17, type: 3}
   - {fileID: 21300000, guid: 68eab19b87697da469a6347305ab3d11, type: 3}
   - {fileID: 21300000, guid: 88cd7f6c8312c764e8648dce0ce25c0e, type: 3}
   m_PackedSpriteNamesToIndex:
   - Titre_LongLeash
   - Score_Board
   - Portrait_doggo_f01
+  - chrono icon
   - Bouton_Play
   - Portrait_doggo_f02
   m_RenderDataMap: {}

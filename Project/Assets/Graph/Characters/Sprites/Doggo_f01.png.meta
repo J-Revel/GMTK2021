@@ -43,7 +43,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 7
   spritePivot: {x: 0.42138243, y: 0.6081512}
   spritePixelsToUnits: 500

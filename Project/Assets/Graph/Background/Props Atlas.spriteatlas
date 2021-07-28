@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 779fe442cd9380340b7f1d31348bd584, type: 3}
-    totalSpriteSurfaceArea: 32422295
+    totalSpriteSurfaceArea: 33119975
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -74,6 +74,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e1dbb1bb54994e44f9d058c17ff0e24a, type: 3}
   - {fileID: 21300000, guid: e91a8e1c4d8d6bf46ad430309ae25da3, type: 3}
   - {fileID: 21300000, guid: bb4a49fc40796ea4ea2072b3fb5ff85f, type: 3}
+  - {fileID: -1053367640309505338, guid: 8678a46d43b71f84a9ca6a0f92ebad43, type: 3}
   - {fileID: 21300000, guid: 9ffe3bbd6ebe3f749a0dce6d12c619c0, type: 3}
   - {fileID: 21300000, guid: c9607acdf086ff440b519a001663582a, type: 3}
   - {fileID: 21300000, guid: 5921c6fd96d29fe4bab35a67155d3886, type: 3}
@@ -122,6 +123,7 @@ SpriteAtlas:
   - Allee_Pietonne
   - VeloV_Velo
   - BG_fleurs_f01
+  - UI_Line_Page
   - Travaux_Trou_Sol
   - Maison_Porte
   - Parc_Haie
