@@ -16,7 +16,6 @@ public class LoopingElementEditor : Editor
 
         Vector3 direction = example.targetDirection;
         Vector3 newPosition = Handles.Slider(targetPos, direction, size, Handles.CubeHandleCap, 0.1f);
-        // Vector3 newPosition = Handles.PositionHandle(example.transform.TransformPoint(example.targetPos), example.transform.rotation);
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObject(example, "Change Look At Target Position");

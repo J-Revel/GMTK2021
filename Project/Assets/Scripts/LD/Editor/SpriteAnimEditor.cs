@@ -22,10 +22,29 @@ public class AnimEditor : EditorWindow
     private Vector2 scrollPos;
     private string newPointName;
     private Color[] pointColors;
+    private float lastBlinkTime = 0;
+    private bool blinkOn = false;
+
+    private void Init()
+    {
+        lastBlinkTime = Time.realtimeSinceStartup;
+    }
+
+    private void Update()
+    {
+        if(Time.realtimeSinceStartup - lastBlinkTime > 0.5f)
+        {
+            blinkOn = !blinkOn;
+            lastBlinkTime = Time.realtimeSinceStartup;
+            Repaint();
+        }
+    }
 
     void OnGUI()
     {
         SpriteAnimList newAnimList = (SpriteAnimList)EditorGUILayout.ObjectField(animList, typeof(SpriteAnimList), false, null);
+        if(newAnimList == null)
+            return;
         if(newAnimList.actionPointNames == null)
             newAnimList.actionPointNames = new string[0];
         for(int i=0; i<newAnimList.actionPointNames.Length; i++)
@@ -35,6 +54,7 @@ public class AnimEditor : EditorWindow
                 if(GUILayout.Button("Remove"))
                 {
                     newAnimList.RemoveActionPoint(i);
+                    EditorUtility.SetDirty(newAnimList);
                 }
             EditorGUILayout.EndHorizontal();
         }
@@ -42,6 +62,7 @@ public class AnimEditor : EditorWindow
             if(GUILayout.Button("Add Point"))
             {
                 newAnimList.AddActionPoint("new anim");
+                EditorUtility.SetDirty(newAnimList);
             }
         EditorGUILayout.EndHorizontal();
         if((serializedAnimList == null && newAnimList != null) || newAnimList != animList)
@@ -79,6 +100,13 @@ public class AnimEditor : EditorWindow
             {
                 points[i] = spriteAnim.GetSpritePoint(i, selectedAnimSprite);
             }
+            string[] options = new string[newAnimList.actionPointNames.Length + 1];
+            options[0] = "Move";
+            for(int i=0; i<newAnimList.actionPointNames.Length; i++)
+            {
+                options[i+1] = newAnimList.actionPointNames[i];
+            }
+            selectedPointIndex = GUILayout.Toolbar(selectedPointIndex + 1, options) - 1;
             DrawSpriteScrollView(rect, sprite, maxSpriteSize, points, newAnimList);
         }
     }
@@ -89,13 +117,14 @@ public class AnimEditor : EditorWindow
     private void DrawSpriteScrollView(Rect rect, Sprite sprite, Vector2 maxSpriteSize, Vector2[] points, SpriteAnimList newAnimList)
     {
         var e = Event.current;
+
         
-        if (e.isMouse && e.type == EventType.MouseDown && e.button != 0)
+        if (e.isMouse && e.type == EventType.MouseDown && (e.button != 0 || selectedPointIndex < 0))
         {
             lastDragPos = e.mousePosition;
             drag = true;
         }
-        else if(e.isMouse && e.type == EventType.MouseUp && e.button != 0)
+        else if(e.isMouse && e.type == EventType.MouseUp && (e.button != 0 || selectedPointIndex < 0))
         {
             drag = false;
         }
@@ -116,10 +145,11 @@ public class AnimEditor : EditorWindow
         ) - scrollCenter;
         DrawOnGUISprite(sprite, contentCenter, displaySize);
 
-        if (e.isMouse && (e.type == EventType.MouseDown || e.type == EventType.MouseDrag) && e.button == 0)
+        if (selectedPointIndex >= 0 && e.isMouse && (e.type == EventType.MouseDown || e.type == EventType.MouseDrag) && e.button == 0)
         {
             SpriteAnimConfig spriteAnim = newAnimList.spriteAnims[selectedAnimIndex].spriteAnim;
             spriteAnim.SetActionPoint(selectedPointIndex, selectedAnimSprite, WorldToRelative(sprite, contentCenter, displaySize, e.mousePosition));
+            EditorUtility.SetDirty(newAnimList);
             Repaint();
         }
 
@@ -129,6 +159,12 @@ public class AnimEditor : EditorWindow
         {
             Vector2 pointPos = RelativeToWorld(sprite, contentCenter, displaySize, points[i]);
             EditorGUI.DrawRect(new Rect(pointPos.x - 3, pointPos.y - 3, 6, 6), colors[i % colors.Length]);
+            if(i == selectedPointIndex)
+            {
+                EditorGUI.DrawRect(new Rect(pointPos.x - 5, pointPos.y - 5, 10, 10), colors[i % colors.Length]);
+                if(blinkOn)
+                    EditorGUI.DrawRect(new Rect(pointPos.x - 4, pointPos.y - 4, 8, 8), Color.white);
+            }
         }
         GUI.EndScrollView();
     }

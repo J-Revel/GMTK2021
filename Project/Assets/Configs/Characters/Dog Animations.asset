@@ -18,21 +18,34 @@ MonoBehaviour:
       sprites:
       - {fileID: 21300000, guid: 528ee6c251589fe47a1dd5e0ca564a37, type: 3}
       - {fileID: 21300000, guid: 528ee6c251589fe47a1dd5e0ca564a37, type: 3}
+      actionPoints:
+      - {x: 0.43191963, y: 0.3846154}
+      - {x: 0.43191963, y: 0.3846154}
       framePerSecond: 2
   - name: run
     spriteAnim:
       sprites:
       - {fileID: 21300000, guid: 64656db98fdfc9b4bbde42735cb4cf93, type: 3}
       - {fileID: 21300000, guid: 8b9e508b4c42efa4480f6efd4aab4fea, type: 3}
+      actionPoints:
+      - {x: 0.40304488, y: 0.42195767}
+      - {x: 0.35919055, y: 0.34696263}
       framePerSecond: 2
   - name: stop
     spriteAnim:
       sprites:
       - {fileID: 21300000, guid: 1b1e7c87901cff24c86d48d8448fd955, type: 3}
+      actionPoints:
+      - {x: 0, y: 0}
       framePerSecond: 2
   - name: pee
     spriteAnim:
       sprites:
       - {fileID: 21300000, guid: e09630f98b997964ab153d9b5966f40f, type: 3}
       - {fileID: 21300000, guid: f995bc2066a4d9f4e85af6a9f3140ec8, type: 3}
+      actionPoints:
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
       framePerSecond: 2
+  actionPointNames:
+  - Leash
