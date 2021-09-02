@@ -17,7 +17,7 @@ public class AnimEditor : EditorWindow
     private SerializedObject serializedAnimList;
     private int selectedAnimIndex = 0;
     private int selectedAnimSprite = 0;
-    private int selectedPointIndex = 0;
+    private int selectedPointIndex = -1;
     private float displaySize = 1;
     private Vector2 scrollPos;
     private string newPointName;
@@ -83,6 +83,13 @@ public class AnimEditor : EditorWindow
                 animNames[i] = animName;
             }
             selectedAnimIndex = EditorGUILayout.Popup("animation", selectedAnimIndex, animNames);
+            SerializedProperty selectedAnimElement = animsListProp.GetArrayElementAtIndex(selectedAnimIndex);
+            
+            SerializedProperty fpsProperty = selectedAnimElement.FindPropertyRelative("spriteAnim").FindPropertyRelative("framePerSecond");
+            if(EditorGUILayout.PropertyField(fpsProperty))
+            {
+                serializedAnimList.ApplyModifiedProperties();
+            }
             SpriteAnimConfig spriteAnim = newAnimList.spriteAnims[selectedAnimIndex].spriteAnim;
             Sprite sprite = spriteAnim.GetSpriteFromIndex(selectedAnimSprite);
             Vector2 maxSpriteSize = Vector2.zero;

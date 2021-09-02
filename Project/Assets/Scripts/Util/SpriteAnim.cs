@@ -25,7 +25,7 @@ public class SpriteAnimConfig
         return actionPoints[pointIndex * sprites.Length + spriteIndex];
     }
 
-    public float GetSpriteIndex(float time)
+    public int GetSpriteIndex(float time)
     {
         return Mathf.FloorToInt(time * framePerSecond);
     }

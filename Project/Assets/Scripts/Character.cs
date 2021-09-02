@@ -8,7 +8,8 @@ public class Character : MonoBehaviour
     
     private new Rigidbody2D rigidbody;
     public SpriteRenderer spriteRenderer;
-    public Animator animator;
+
+    // public Animator animator;
     public float runSpeed = 1;
     public float acceleration;
     public float footstepSoundFadeTime = 0;
@@ -33,11 +34,16 @@ public class Character : MonoBehaviour
             input = Vector3.zero;
         rigidbody.AddForce(input.normalized * acceleration * rigidbody.mass, ForceMode2D.Force);
         if(input.x > 0)
-            animator.SetBool("left", false);
+        {
+
+            // animator.SetBool("left", false);
+        }
         if(input.x < 0)
-            animator.SetBool("left", true);
-        animator.SetBool("run", input.sqrMagnitude > 0.01);
-        animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
+        {
+            // animator.SetBool("left", true);
+        }
+        // animator.SetBool("run", input.sqrMagnitude > 0.01);
+        // animator.SetFloat("speed", rigidbody.velocity.sqrMagnitude);
         if(footstepSource != null)
         {
             if(input.sqrMagnitude > 0.5)
@@ -53,7 +59,7 @@ public class Character : MonoBehaviour
             {
                 peeTime = 0;
                 peeing = false;
-                animator.SetBool("canPee", false);
+                // animator.SetBool("canPee", false);
                 inputEnabled = true;
                 PeePoint.activePoint.OnPeeFinished();
             }
@@ -62,7 +68,7 @@ public class Character : MonoBehaviour
 
     public void StartPeing()
     {
-        animator.SetBool("canPee", true);
+        // animator.SetBool("canPee", true);
         peeTime = 0;
         peeing = true;
         inputEnabled = false;
