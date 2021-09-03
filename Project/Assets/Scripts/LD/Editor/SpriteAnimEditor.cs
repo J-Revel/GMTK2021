@@ -14,7 +14,6 @@ public class AnimEditor : EditorWindow
 
     private bool groupEnabled = false;
     private SpriteAnimList animList;
-    private SerializedObject serializedAnimList;
     private int selectedAnimIndex = 0;
     private int selectedAnimSprite = 0;
     private int selectedPointIndex = -1;
@@ -65,30 +64,35 @@ public class AnimEditor : EditorWindow
                 EditorUtility.SetDirty(newAnimList);
             }
         EditorGUILayout.EndHorizontal();
-        if((serializedAnimList == null && newAnimList != null) || newAnimList != animList)
+        if((newAnimList == null) || newAnimList != animList)
         {
-            serializedAnimList = new SerializedObject(newAnimList);
             animList = newAnimList;
             selectedAnimIndex = 0;
             selectedAnimSprite = 0;
         }
-        if(serializedAnimList != null)
+        if(newAnimList != null)
         {
-            SerializedProperty animsListProp = serializedAnimList.FindProperty("spriteAnims");
-            string[] animNames = new string[animsListProp.arraySize];
-            for(int i=0; i<animsListProp.arraySize; i++)
+            string[] animNames = new string[newAnimList.spriteAnims.Length];
+            for(int i=0; i<newAnimList.spriteAnims.Length; i++)
             {
-                SerializedProperty animElement = animsListProp.GetArrayElementAtIndex(i);
-                string animName = animElement.FindPropertyRelative("name").stringValue;
+                NamedSpriteAnim animElement = newAnimList.spriteAnims[i];
+                string animName = animElement.name;
                 animNames[i] = animName;
             }
-            selectedAnimIndex = EditorGUILayout.Popup("animation", selectedAnimIndex, animNames);
-            SerializedProperty selectedAnimElement = animsListProp.GetArrayElementAtIndex(selectedAnimIndex);
-            
-            SerializedProperty fpsProperty = selectedAnimElement.FindPropertyRelative("spriteAnim").FindPropertyRelative("framePerSecond");
-            if(EditorGUILayout.PropertyField(fpsProperty))
+            int newSelectedAnimIndex = EditorGUILayout.Popup("animation", selectedAnimIndex, animNames);
+            if(newSelectedAnimIndex != selectedAnimIndex)
             {
-                serializedAnimList.ApplyModifiedProperties();
+                selectedAnimIndex = newSelectedAnimIndex;
+                Debug.Log(selectedAnimIndex);
+
+            }
+            NamedSpriteAnim selectedAnimElement = newAnimList.spriteAnims[selectedAnimIndex];
+            
+            float newFramePerSecond = EditorGUILayout.FloatField(selectedAnimElement.spriteAnim.framePerSecond);
+            if(newFramePerSecond != selectedAnimElement.spriteAnim.framePerSecond)
+            {
+                selectedAnimElement.spriteAnim.framePerSecond = newFramePerSecond;
+                EditorUtility.SetDirty(newAnimList);
             }
             SpriteAnimConfig spriteAnim = newAnimList.spriteAnims[selectedAnimIndex].spriteAnim;
             Sprite sprite = spriteAnim.GetSpriteFromIndex(selectedAnimSprite);
@@ -200,7 +204,7 @@ public class AnimEditor : EditorWindow
         Rect c = aSprite.rect;
         float spriteW = c.width;
         float spriteH = c.height;
-        Rect rect = new Rect(position.x - aSprite.pivot.x * scale, position.y - (spriteH - aSprite.pivot.y) * scale, spriteW * scale, spriteH * scale);
+        Rect rect = new Rect(position.x, position.y, spriteW * scale, spriteH * scale);
         return rect.position + rect.size * relativePoint;
     }
 
@@ -209,7 +213,7 @@ public class AnimEditor : EditorWindow
         Rect c = aSprite.rect;
         float spriteW = c.width;
         float spriteH = c.height;
-        Rect rect = new Rect(position.x - aSprite.pivot.x * scale, position.y - (spriteH - aSprite.pivot.y) * scale, spriteW * scale, spriteH * scale);
+        Rect rect = new Rect(position.x, position.y, spriteW * scale, spriteH * scale);
         return (screenPoint - rect.position) / rect.size;
     }
 }

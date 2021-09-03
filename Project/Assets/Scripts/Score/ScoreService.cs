@@ -26,6 +26,8 @@ public class ScoreService : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        if(GameLauncher.instance == null)
+            return;
         foreach(var objective in GameLauncher.instance.config.objectives)
         {
             stats[objective.statName] = new StatValue();
@@ -99,6 +101,8 @@ public class ScoreService : MonoBehaviour
 
     private void CheckDefeat(string statName)
     {
+        if(GameLauncher.instance == null)
+            return;
         if(GameLauncher.instance.config.GetObjective(statName).isDefeatCondition && stats[statName].value > stats[statName].max)
         {
             defeatDelegate?.Invoke();

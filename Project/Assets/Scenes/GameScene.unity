@@ -24793,6 +24793,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3337587519943103062, guid: 6a6a7ca0ae6429f4b9bed37472f4effa, type: 3}
   m_PrefabInstance: {fileID: 821628363}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &822677102 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1218631133, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+  m_PrefabInstance: {fileID: 922897566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &826575807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27233,6 +27238,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2138688832, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720798911809835049, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
+      propertyPath: testPosition
+      value: 
+      objectReference: {fileID: 822677102}
     - target: {fileID: 5720798911809835051, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
       propertyPath: target
       value: 

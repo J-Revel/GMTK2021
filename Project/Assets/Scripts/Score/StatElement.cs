@@ -10,6 +10,8 @@ public class StatElement : MonoBehaviour
 
     void Start()
     {
+        if(GameLauncher.instance == null)
+            return;
         if(incrementMax && GameLauncher.instance.config.GetObjective(statName).countElements)
             ScoreService.instance.IncrStatMax(statName);
     }

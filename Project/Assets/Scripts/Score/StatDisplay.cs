@@ -38,6 +38,8 @@ public class StatDisplay : MonoBehaviour
     void UpdateDisplay()
     {
         string str = prefix + ScoreService.instance.GetStat(stat).value + "/" + ScoreService.instance.GetStat(stat).max;
+        if(GameLauncher.instance == null)
+            return;
         if(GameLauncher.instance.config.GetObjective(stat).isDefeatCondition)
             str = "" + (ScoreService.instance.GetStat(stat).max - ScoreService.instance.GetStat(stat).value);
         if(isTimer)

@@ -22,7 +22,7 @@ public class SpriteAnimConfig
 
     public Vector2 GetSpritePoint(int pointIndex, int spriteIndex)
     {
-        return actionPoints[pointIndex * sprites.Length + spriteIndex];
+        return actionPoints[pointIndex * sprites.Length + spriteIndex % sprites.Length];
     }
 
     public int GetSpriteIndex(float time)
@@ -32,7 +32,7 @@ public class SpriteAnimConfig
 
     public void SetActionPoint(int pointIndex, int spriteIndex, Vector2 point)
     {
-        actionPoints[pointIndex * sprites.Length + spriteIndex] = point;
+        actionPoints[pointIndex * sprites.Length + spriteIndex % sprites.Length] = point;
     }
 
     public void AddActionPoint()

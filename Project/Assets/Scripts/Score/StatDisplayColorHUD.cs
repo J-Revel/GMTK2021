@@ -17,6 +17,8 @@ public class StatDisplayColorHUD : MonoBehaviour
     void Update()
     {
         Color textColor;
+        if(GameLauncher.instance == null)
+            return;
         StatObjective objective = GameLauncher.instance.config.GetObjective(statDisplay.stat);
         if(objective.isDefeatCondition)
         {
