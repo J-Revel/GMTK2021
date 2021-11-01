@@ -15,10 +15,15 @@ public class Leash : MonoBehaviour
     public float leashForce;
     public float zOffset = 1;
     public float pow = 1;
+    public float upVectorAngle = 45;
+    private Vector3 upVector;
+    public float displayOffsetRatio = 1;
 
     public List<DistanceJoint2D> leashElements = new List<DistanceJoint2D>();
 
     public DistanceJoint2D leashElementPrefab;
+
+    public int skippedElementCount = 3;
 
     void Start()
     {
@@ -46,7 +51,7 @@ public class Leash : MonoBehaviour
         parentJoint.connectedBody = previousJoint.GetComponent<Rigidbody2D>();
         parentJoint.distance = segmentLength;
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = leashElements.Count + 2;
+        lineRenderer.positionCount = leashElements.Count + 2 - skippedElementCount;
 
         for(int i=0; i<leashElements.Count; i++)
         {
@@ -63,27 +68,20 @@ public class Leash : MonoBehaviour
 
     void Update()
     {
-        Vector3[] positions = new Vector3[leashElements.Count + 2];
+        Vector3[] positions = new Vector3[leashElements.Count + 2 - skippedElementCount];
         positions[0] = targetPosition.position;
-        positions[leashElements.Count + 1] = parentPosition.position;
-        for(int i=0; i<leashElements.Count; i++)
+        upVector = Quaternion.Euler(upVectorAngle, 0, 0) * Vector3.up;
+        float targetHeight = targetPosition.position.z/ upVector.z;
+        float parentHeight = parentPosition.position.z/ upVector.z;
+        positions[leashElements.Count + 1 - skippedElementCount] = parentPosition.position;
+        for(int i=skippedElementCount; i<leashElements.Count; i++)
         {
             Vector3 newPosition = leashElements[i].transform.position;
-            //newPosition.z -= zOffset;
 
-            Vector3 targetOffset = targetPosition.position - leashElements[1].transform.position;
-            Vector3 parentOffset = parentPosition.position - leashElements[leashElements.Count - 2].transform.position;
-            
             float ratio = (float)i / leashElements.Count;
-
-            // Vector3 targetPosition = Vector3.Lerp(positions[0], positions[leashElements.Count + 1], ratio);
-            // targetPosition.x = newPosition.x;
-            // targetPosition.y = newPosition.y;
             
-            positions[i + 1] = newPosition + targetOffset * (1 - Mathf.Pow(ratio, pow)) + parentOffset * Mathf.Pow(ratio, pow);
-            //leashElements[i].transform.rotation = Quaternion.AngleAxis(Vector2.SignedAngle(positions[i], positions[i+1]), new Vector3(0, 0, 1));
+            positions[i + 1 - skippedElementCount] = newPosition + upVector * (targetHeight * Mathf.Pow((1 - ratio), pow) + parentHeight * Mathf.Pow(ratio, pow));
         }
-        //positions[0] = parent.position;
         lineRenderer.SetPositions(positions);
     }
 

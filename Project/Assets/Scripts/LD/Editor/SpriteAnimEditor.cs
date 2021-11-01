@@ -84,10 +84,17 @@ public class AnimEditor : EditorWindow
             {
                 selectedAnimIndex = newSelectedAnimIndex;
                 Debug.Log(selectedAnimIndex);
-
             }
             NamedSpriteAnim selectedAnimElement = newAnimList.spriteAnims[selectedAnimIndex];
-            
+            EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Anim Name");
+                string newName = EditorGUILayout.TextField(selectedAnimElement.name);
+                if(newName != selectedAnimElement.name)
+                {
+                    newAnimList.spriteAnims[selectedAnimIndex].name = newName;
+                    EditorUtility.SetDirty(newAnimList);
+                }
+            EditorGUILayout.EndHorizontal();
             float newFramePerSecond = EditorGUILayout.FloatField(selectedAnimElement.spriteAnim.framePerSecond);
             if(newFramePerSecond != selectedAnimElement.spriteAnim.framePerSecond)
             {

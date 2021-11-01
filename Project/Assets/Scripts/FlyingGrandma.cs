@@ -20,9 +20,10 @@ public class FlyingGrandma : MonoBehaviour
     private Quaternion initialRot;
     public float takeoffForce = 900;
     public Transform dog;
+    public float handHeight = 1;
     
     public SpriteRenderer spriteRenderer;
-    public Animator animator;
+    public AnimatedSprite animatedSprite;
     
     void Start()
     {
@@ -37,35 +38,37 @@ public class FlyingGrandma : MonoBehaviour
     void Update()
     {
         currentVelocity = rigidbody.velocity.magnitude;
-        bool isLeft = rigidbody.velocity.x < 0.01f;
+        bool isLeft = rigidbody.transform.position.x > dog.transform.position.x;
 
-        if(rigidbody.velocity.sqrMagnitude < 0.5f)
-        {
-            isLeft = (rigidbody.transform.position.x > dog.transform.position.x);
-        }
-
-        animator.SetBool("left", isLeft);
-        animator.SetBool("pull", Vector3.Distance(transform.position, dog.position) > pullDistance);
+        
+        spriteRenderer.transform.localPosition = -Vector3.up * animatedSprite.GetLocalPointPosition("Ground").y;
         
         if(!flying)
         {
-            spriteRenderer.transform.rotation = initialRot;
+            spriteRenderer.transform.localRotation = initialRot;
+            animatedSprite.spriteRenderer.flipX = isLeft;
+            animatedSprite.spriteRenderer.flipY = false;
+            if(Vector3.Distance(transform.position, dog.position) > pullDistance)
+                animatedSprite.SelectAnim("Pull");
+            else
+                animatedSprite.SelectAnim("Idle");
         }
         else
         {
+            animatedSprite.SelectAnim("Fly");
+            animatedSprite.spriteRenderer.flipX = false;
+            animatedSprite.spriteRenderer.flipY = rigidbody.velocity.x < 0.01f;;
             float angle = 0;
             angle = Vector3.SignedAngle(Vector2.right, rigidbody.velocity, Vector3.forward);
 
             float angleRatio = Mathf.Abs(rigidbody.velocity.normalized.x);
-            transform.localRotation = Quaternion.AngleAxis((isLeft ? 180 : 0), Vector3.forward);
-            spriteRenderer.transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.Slerp(Quaternion.identity, initialRot, angleRatio);
+            spriteRenderer.transform.localRotation = Quaternion.AngleAxis((1 - angleRatio * angleRatio) * 45, Vector3.right) * Quaternion.AngleAxis(angle, Vector3.forward);
             
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
                 landingThresholdTime += Time.deltaTime;
                 if(landingThresholdTime > landingThresholdDuration)
                 {
-                    animator.SetBool("flying", false);
                     rigidbody.velocity = Vector3.zero;
                     flying = false;
                     rigidbody.drag = groundedDrag;
@@ -84,7 +87,6 @@ public class FlyingGrandma : MonoBehaviour
     void OnJointBreak2D(Joint2D joint)
     {
         flying = true;
-        animator.SetBool("flying", true);
         rigidbody.drag = flyingDrag;
         rigidbody.mass = flyingMass;
         rigidbody.velocity = -joint.reactionForce.normalized * flyingLaunchSpeed;
