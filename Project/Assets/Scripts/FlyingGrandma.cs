@@ -21,9 +21,16 @@ public class FlyingGrandma : MonoBehaviour
     public float takeoffForce = 900;
     public Transform dog;
     public float handHeight = 1;
+    private bool fallen = false;
     
     public SpriteRenderer spriteRenderer;
     public AnimatedSprite animatedSprite;
+
+    private float angleRatio;
+    public float angleRatioSpeed = 1;
+    private float flipAnimTime = 0;
+    public float flipAnimDuration = 0.5f;
+    public float testValue = 0;
     
     void Start()
     {
@@ -48,21 +55,38 @@ public class FlyingGrandma : MonoBehaviour
             spriteRenderer.transform.localRotation = initialRot;
             animatedSprite.spriteRenderer.flipX = isLeft;
             animatedSprite.spriteRenderer.flipY = false;
-            if(Vector3.Distance(transform.position, dog.position) > pullDistance)
+            
+            if(fallen)
+            {
+                animatedSprite.SelectAnim("Fall");
+                if(animatedSprite.isAnimationFinished)
+                    fallen = false;
+            }
+            else if(Vector3.Distance(transform.position, dog.position) > pullDistance)
                 animatedSprite.SelectAnim("Pull");
             else
                 animatedSprite.SelectAnim("Idle");
         }
         else
         {
+            angleRatio += Mathf.Clamp(rigidbody.velocity.normalized.x - angleRatio , -angleRatioSpeed * Time.deltaTime, angleRatioSpeed * Time.deltaTime);
+            // angleRatio = Mathf.Cos(Time.time * 3.14f / 2);
             animatedSprite.SelectAnim("Fly");
             animatedSprite.spriteRenderer.flipX = false;
-            animatedSprite.spriteRenderer.flipY = rigidbody.velocity.x < 0.01f;;
+            float displayAngleRatio = angleRatio;
+            if(angleRatio * flipAnimTime < 0)
+            {
+                displayAngleRatio = Mathf.Sign(flipAnimTime) * 0.001f;
+            }
+            flipAnimTime += Mathf.Sign(angleRatio) * Time.deltaTime;
+            flipAnimTime = Mathf.Clamp(flipAnimTime, -flipAnimDuration, flipAnimDuration);
+            animatedSprite.spriteRenderer.flipY = displayAngleRatio < 0;
             float angle = 0;
             angle = Vector3.SignedAngle(Vector2.right, rigidbody.velocity, Vector3.forward);
-
-            float angleRatio = Mathf.Abs(rigidbody.velocity.normalized.x);
-            spriteRenderer.transform.localRotation = Quaternion.AngleAxis((1 - angleRatio * angleRatio) * 45, Vector3.right) * Quaternion.AngleAxis(angle, Vector3.forward);
+            
+            print(flipAnimTime + " " + displayAngleRatio);
+            //- 90 * Mathf.Sign(flipAnimTime) * ((1-Mathf.Abs(flipAnimTime / flipAnimDuration)))
+            spriteRenderer.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward) * Quaternion.AngleAxis(-displayAngleRatio * 45 - 90 * Mathf.Sign(flipAnimTime) * (1-Mathf.Abs(flipAnimTime) / flipAnimDuration), Vector3.right);
             
             if(rigidbody.velocity.sqrMagnitude < velocityLandingThreshold * velocityLandingThreshold)
             {
@@ -71,6 +95,7 @@ public class FlyingGrandma : MonoBehaviour
                 {
                     rigidbody.velocity = Vector3.zero;
                     flying = false;
+                    fallen = true;
                     rigidbody.drag = groundedDrag;
                     rigidbody.mass = groundedMass;
                     TargetJoint2D joint = rigidbody.gameObject.AddComponent<TargetJoint2D>();
@@ -90,5 +115,6 @@ public class FlyingGrandma : MonoBehaviour
         rigidbody.drag = flyingDrag;
         rigidbody.mass = flyingMass;
         rigidbody.velocity = -joint.reactionForce.normalized * flyingLaunchSpeed;
+        angleRatio = rigidbody.velocity.normalized.x;
     }
 }

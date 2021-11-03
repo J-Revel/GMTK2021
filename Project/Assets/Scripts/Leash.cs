@@ -78,7 +78,7 @@ public class Leash : MonoBehaviour
         {
             Vector3 newPosition = leashElements[i].transform.position;
 
-            float ratio = (float)i / leashElements.Count;
+            float ratio = (float)(i+1) / (leashElements.Count+2);
             
             positions[i + 1 - skippedElementCount] = newPosition + upVector * (targetHeight * Mathf.Pow((1 - ratio), pow) + parentHeight * Mathf.Pow(ratio, pow));
         }

@@ -19,36 +19,36 @@ MonoBehaviour:
       - {fileID: 21300000, guid: d7a3f2b1e536af34cb549e048e0a1727, type: 3}
       - {fileID: 21300000, guid: 943c60ab97c186e47a2b69be87bc029b, type: 3}
       actionPoints:
-      - {x: -0.31514084, y: 0.22743362}
-      - {x: -0.2940141, y: 0.2380531}
+      - {x: -0.14964789, y: 0.22920354}
+      - {x: -0.17429577, y: 0.24336283}
       framePerSecond: 2
+      loop: 1
   - name: Fly
     spriteAnim:
       sprites:
       - {fileID: 21300000, guid: b3ccd12af62457440bbb927eb3088d73, type: 3}
       - {fileID: 21300000, guid: 2a4e9a983a377c94a90664f553008dd0, type: 3}
       actionPoints:
-      - {x: 0, y: 0.5167131}
-      - {x: 0.0017331023, y: 0.51536316}
+      - {x: -0.0017331023, y: 0.5139276}
+      - {x: 0, y: 0.5069832}
       framePerSecond: 2
+      loop: 1
   - name: Fall
     spriteAnim:
       sprites:
       - {fileID: 21300000, guid: b15519af1b4e19345bf8cb372961402e, type: 3}
       - {fileID: 21300000, guid: 6c1f6d7167bbdc846833f7c39a8e2c8f, type: 3}
+      - {fileID: 21300000, guid: 6c1f6d7167bbdc846833f7c39a8e2c8f, type: 3}
+      - {fileID: 21300000, guid: 6c1f6d7167bbdc846833f7c39a8e2c8f, type: 3}
+      - {fileID: 21300000, guid: 4db3827b5bb814b4199d25228c2defd8, type: 3}
       actionPoints:
       - {x: 0.0075046904, y: 0.20731707}
       - {x: 0.0036231885, y: 0.08739837}
-      framePerSecond: 2
-  - name: Get Up
-    spriteAnim:
-      sprites:
-      - {fileID: 21300000, guid: 4db3827b5bb814b4199d25228c2defd8, type: 3}
-      - {fileID: 21300000, guid: 4db3827b5bb814b4199d25228c2defd8, type: 3}
-      actionPoints:
-      - {x: 0, y: 0.5167131}
-      - {x: -0.23672566, y: 0.15982404}
-      framePerSecond: 2
+      - {x: 0.0009057971, y: 0.07926829}
+      - {x: -0.0045289854, y: 0.08739837}
+      - {x: -0.23340708, y: 0.1568915}
+      framePerSecond: 6
+      loop: 0
   - name: Pull
     spriteAnim:
       sprites:
@@ -56,7 +56,8 @@ MonoBehaviour:
       - {fileID: 21300000, guid: efd22909f86018a45b01550c45837218, type: 3}
       actionPoints:
       - {x: 0.022857143, y: 0.25585938}
-      - {x: 0.008108108, y: 0.28514057}
+      - {x: -0.017567568, y: 0.2951807}
       framePerSecond: 2
+      loop: 1
   actionPointNames:
   - Ground

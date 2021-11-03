@@ -27,12 +27,15 @@ public class AnimatedSprite : MonoBehaviour
         }
     }
 
+    public bool isAnimationFinished { get { return animList.spriteAnims[animIndex].spriteAnim.IsAnimationFinished(time); } }
+
     public void SelectAnim(string animName, bool loop = true)
     {
         for(int i=0; i<animList.spriteAnims.Length; i++)
         {
-            if(animList.spriteAnims[i].name == animName)
+            if(animList.spriteAnims[i].name == animName && i != animIndex)
             {
+                time = 0;
                 animIndex = i;
                 frameIndex = 0;
                 spriteRenderer.sprite = animList.spriteAnims[animIndex].spriteAnim.GetSpriteFromIndex(frameIndex);

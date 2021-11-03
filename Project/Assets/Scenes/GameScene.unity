@@ -7769,6 +7769,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 276431328}
   animList: {fileID: 11400000, guid: c8a1c90cda112a54a88634bbf908d60e, type: 2}
   animIndex: 0
+  loopAnim: 1
 --- !u!1001 &278602814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25941,6 +25942,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 882656499}
   animList: {fileID: 11400000, guid: 25b54112b5a487e4a94d8048f39f5c4e, type: 2}
   animIndex: 0
+  loopAnim: 1
 --- !u!212 &882656499 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2138688832, guid: f7393206c7b0bea41aa0da2bcff6ac34, type: 3}
@@ -53383,6 +53385,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1067416819756569127, guid: e79c468794cf0734995c7d3ff5b5abbd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.144
+      objectReference: {fileID: 0}
     - target: {fileID: 1067416821011932361, guid: e79c468794cf0734995c7d3ff5b5abbd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53449,7 +53455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260102432252102613, guid: e79c468794cf0734995c7d3ff5b5abbd, type: 3}
       propertyPath: m_Size.x
-      value: 0.55
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260102432252102613, guid: e79c468794cf0734995c7d3ff5b5abbd, type: 3}
+      propertyPath: m_Size.y
+      value: 1.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79c468794cf0734995c7d3ff5b5abbd, type: 3}
@@ -59585,7 +59595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141662771851211412, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7141662771851211413, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
       propertyPath: m_RootOrder
@@ -59616,6 +59626,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2097206544}
     - target: {fileID: 7141662771851211496, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
+      propertyPath: pullDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141662771851211496, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
       propertyPath: takeoffForce
       value: 450
       objectReference: {fileID: 0}
@@ -59623,6 +59637,14 @@ PrefabInstance:
       propertyPath: animatedSprite
       value: 
       objectReference: {fileID: 276431329}
+    - target: {fileID: 7141662771851211496, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
+      propertyPath: angleRatioSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141662771851211496, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
+      propertyPath: flipAnimDuration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7141662771851211496, guid: dd8066e1948aedf4abf4d7c5c8bcb477, type: 3}
       propertyPath: flyingLaunchSpeed
       value: 7

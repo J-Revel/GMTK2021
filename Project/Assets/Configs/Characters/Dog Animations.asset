@@ -22,6 +22,7 @@ MonoBehaviour:
       - {x: -0.06584822, y: -0.61538464}
       - {x: -0.07254464, y: -0.6177156}
       framePerSecond: 2
+      loop: 1
   - name: run
     spriteAnim:
       sprites:
@@ -31,6 +32,7 @@ MonoBehaviour:
       - {x: -0.088942304, y: -0.5992063}
       - {x: -0.14080945, y: -0.65303737}
       framePerSecond: 5
+      loop: 1
   - name: stop
     spriteAnim:
       sprites:
@@ -38,6 +40,7 @@ MonoBehaviour:
       actionPoints:
       - {x: 0.07579462, y: -0.61495537}
       framePerSecond: 2
+      loop: 1
   - name: pee
     spriteAnim:
       sprites:
@@ -47,5 +50,6 @@ MonoBehaviour:
       - {x: -0.11816406, y: -0.5936842}
       - {x: -0.07618026, y: -0.57938147}
       framePerSecond: 5
+      loop: 1
   actionPointNames:
   - Leash
